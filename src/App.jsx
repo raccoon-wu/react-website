@@ -1,4 +1,4 @@
-import Header from './Header.jsx';
+import {FrontPageButton} from './Buttons.jsx';
 import Footer from './Footer.jsx';
 import GalleryItem from './GalleryItem';
 import angryBee from './assets/angryBee.png/';
@@ -11,11 +11,19 @@ function App() {
   const beeFileNames = ['angryBee.png', 'happyBee.png', 'sadBee.png'];
   return (
     <>
-      <Header></Header>
+
 
       {/* {beeFileNames.map(filename => (
         <GalleryItem key={filename} src={require(`./assets/${filename}`).default}></GalleryItem>
       ))} */}
+      <div className = 'titleDiv'>
+      <h1 className='titleFont'> My Portfolio </h1>
+      </div>
+
+      <div className='buttonContainer'>
+      <FrontPageButton buttonText = "2D Collection" clickMessage={"Launching 2D Page..."}></FrontPageButton>
+      <FrontPageButton buttonText = "3D Collection" clickMessage={"Launching 3D Page..."}></FrontPageButton>
+      </div>
 
       <GalleryItem src={angryBee}></GalleryItem>
       <GalleryItem src={happyBee}></GalleryItem>
