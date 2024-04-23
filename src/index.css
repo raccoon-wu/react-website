@@ -43,3 +43,9 @@ button:hover {
   background-color: #00BFB2;
 }
 
+.footerElement{
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

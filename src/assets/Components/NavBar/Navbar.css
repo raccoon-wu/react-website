@@ -1,0 +1,21 @@
+nav {
+    width:100%;
+    color:aliceblue;
+    background-color: rgb(77, 15, 49);
+}
+
+nav ul {
+    list-style-type:none;
+    padding: 1em;
+    margin: 1em;
+    display:flex;
+}
+
+nav li{
+    margin-right: 20%
+}
+
+nav a{
+    cursor: pointer;
+    
+}
