@@ -1,42 +1,43 @@
+@font-face {
+  font-family: 'Bebas';
+  src: url('src/assets/Bebas.otf') format('opentype');
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Bebas', sans-serif;
   color: #FD498B;
   background-image: linear-gradient(#100d11, #3c393d);
 }
 
-titleDiv{
+.titleDiv{
   display:flex;
   align-items: center;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-size: 3.2em;
+  font-size: 5em;
   line-height: 1.1;
   text-align: center;
   margin: auto; /* Added to center horizontally */
   padding: 20px;
 }
 
-buttonContainer{
-  display:inline-block;
-  align-items:center;
-  text-align: center;
+.buttonContainer{
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.4em 1.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #028090;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
-  margin: 10px;
+  color:azure;
+  margin:20px;
 }
 button:hover {
   background-color: #00BFB2;

@@ -21,8 +21,8 @@ function App() {
       </div>
 
       <div className='buttonContainer'>
-      <FrontPageButton buttonText = "2D Collection" clickMessage={"Launching 2D Page..."}></FrontPageButton>
-      <FrontPageButton buttonText = "3D Collection" clickMessage={"Launching 3D Page..."}></FrontPageButton>
+      <button>2D Collection</button>
+      <button>3D Collection</button>
       </div>
 
       <GalleryItem src={angryBee}></GalleryItem>
