@@ -4,9 +4,7 @@ const Navbar = () => {
     return (
         <nav>
             <ul>
-                <li>Home Page</li>
-                <li>2D Works</li>
-                <li>3D Works</li>
+                <li>AMY WU</li>
             </ul>
         </nav>
 

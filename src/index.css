@@ -1,17 +1,12 @@
 @font-face {
-  font-family: 'Bebas';
-  src: url('src/assets/Bebas.otf') format('opentype');
-}
-
+  font-family: 'Tw Cen MT Condensed Extra Bold';
+  src: url('src/assets/Tw.ttf') format('truetype');
+} 
 :root {
-  font-family: 'Bebas', sans-serif;
+  font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   color: #FD498B;
-  background-image: linear-gradient(#100d11, #3c393d);
-}
-
-.titleDiv{
-  display:flex;
-  align-items: center;
+  background-color: #070723;
+  margin:0;
 }
 
 h1 {
@@ -24,23 +19,30 @@ h1 {
 
 .buttonContainer{
   display: flex;
+  flex-direction: column;
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
+  height: 75vh;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.4em 1.5em;
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #028090;
-  color:azure;
-  margin:20px;
-}
+  background-color: #02809000;
+  margin:0px;
+  transition: text-decoration 0.25s;
+  text-decoration: #f3f3ff45;
+  }
+
 button:hover {
-  background-color: #00BFB2;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #f3f3ff;
+  transition: text-decoration-color 0.8s ease;
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 1em;
 }
 
 .footerElement{
@@ -48,4 +50,14 @@ button:hover {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+button .firstWord{
+color:#6464ff;
+font-size: 4vw;
+}
+
+button .restOfText{
+  color:#aaaaff;
+  font-size: 4vw;
 }

@@ -1,21 +1,33 @@
 nav {
     width:100%;
-    color:aliceblue;
-    background-color: rgb(77, 15, 49);
+    color:#ffffff;
+    background-color: #18145b;
+    padding: 2vw 0;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    margin: 0;
 }
 
 nav ul {
     list-style-type:none;
-    padding: 1em;
-    margin: 1em;
-    display:flex;
-}
-
-nav li{
-    margin-right: 20%
-}
-
-nav a{
     cursor: pointer;
-    
+    text-align: center;
+    margin: 0;
+    padding: 0px 0;
+}
+
+nav ul li{
+    display: inline-block;
+    font-size: calc(3vw + 1vh);
+}
+
+body {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px){
+    nav ul li{
+        font-size: 30px;
+    }
 }
