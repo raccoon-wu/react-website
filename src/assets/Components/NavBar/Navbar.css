@@ -1,12 +1,13 @@
 nav {
     width:100%;
     color:#ffffff;
+    height: 70px;
     background-color: #18145b;
-    padding: 2vw 0;
     display: flex;
     top: 0;
     justify-content: center;
     margin: 0;
+    align-items: center;
 }
 
 nav ul {
@@ -19,7 +20,7 @@ nav ul {
 
 nav ul li{
     display: inline-block;
-    font-size: calc(3vw + 1vh);
+    font-size: 30px;
 }
 
 body {

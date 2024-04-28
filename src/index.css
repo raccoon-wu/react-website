@@ -1,6 +1,10 @@
 @font-face {
   font-family: 'Tw Cen MT Condensed Extra Bold';
-  src: url('src/assets/Tw.ttf') format('truetype');
+  src: url('src/assets/Fonts/Tw.ttf') format('truetype');
+} 
+@font-face {
+  font-family: 'Gabriola';
+  src: url('src/assets/Fonts/Gabriola.ttf') format('truetype');
 } 
 :root {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
@@ -18,31 +22,56 @@ h1 {
 }
 
 .buttonContainer{
+  position:relative;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
-  height: 75vh;
+  /* bottom:50%; */
+  top: 50%;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  font-weight: 500;
   font-family: inherit;
   background-color: #02809000;
   margin:0px;
   transition: text-decoration 0.25s;
-  text-decoration: #f3f3ff45;
+  text-decoration: #f3f3ff00;
   }
 
 button:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #f3f3ff;
-  transition: text-decoration-color 0.8s ease;
+  transition: text-decoration-color 0.5s ease-in;
   text-decoration-thickness: 0.2em;
-  text-underline-offset: 1em;
+  text-underline-offset: 0.7em;
+}
+
+button .hoverText{
+  opacity: 0;
+  transition: color 1.5s ease-out;
+}
+
+button:hover .hoverText{
+  opacity: 1;
+  color: rgb(221, 231, 255);
+  font-size: 20px;
+  display:block;
+  position:absolute;
+  bottom:45%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+}
+
+button .hoverTextContainer{
+  position: absolute;
+  top: calc(100% + 6vh); /* Position it below the buttonContainer's bottom edge */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footerElement{
@@ -54,10 +83,53 @@ button:hover {
 
 button .firstWord{
 color:#6464ff;
-font-size: 4vw;
+font-size: 5vw;
+margin: 0;
+padding: 0;
+line-height: 0;
+transition: font-size 0.5s ease;
 }
 
 button .restOfText{
   color:#aaaaff;
-  font-size: 4vw;
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  transition: font-size 0.5s ease;
+}
+
+.andDisplay{
+  font-family: 'Gabriola', sans-serif;
+  font-size: 5vw;
+  color: white;
+  margin: 0;
+  padding: 0;
+  transition: font-size 0.5s ease;
+}
+
+div .topRow{
+  margin: 0;
+  padding: 0;
+}
+
+div .bottomRow{
+  margin: 0;
+  padding: 0;
+}
+
+.fillerDiv{
+  height: 60vh;
+}
+
+@media screen and (max-width: 1000px) {
+  button .firstWord {
+    font-size: 60px; /* Set font size for smaller screens */
+  }
+  button .restOfText{
+    font-size: 60px; /* Set font size for smaller screens */
+  }
+  .andDisplay{
+    font-size: 60px; /* Set font size for smaller screens */
+  }
 }

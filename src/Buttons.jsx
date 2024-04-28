@@ -1,6 +1,9 @@
 import './index.css'
+import React, { useState } from 'react';
 
-export function FrontPageButton({buttonText, clickMessage}){
+export function FrontPageButton({buttonText, clickMessage, hoverText}){
+    
+    const [isHovered, setIsHovered] = useState(true);
     const handleClick = () => console.log(clickMessage);
 
     const firstSpaceIndex = buttonText.indexOf(' ');
@@ -9,9 +12,16 @@ export function FrontPageButton({buttonText, clickMessage}){
 
     return(
     
-        <button onClick = {handleClick}>
+        <button onClick = {handleClick} 
+        onMouseEnter={()=> setIsHovered(true)} onMouseLeave={()=> setIsHovered(true)}
+        >
             <span className="firstWord">{firstWord}</span>
             <span className="restOfText">{restOfText}</span>
+            {isHovered && 
+                (<div className="hoverTextContainer">
+                <span className="hoverText">{hoverText}
+                </span>
+                </div>)}
         </button>
     )
 }
