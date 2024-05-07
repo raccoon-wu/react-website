@@ -9,8 +9,15 @@
 :root {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   color: #FD498B;
-  background-color: #070723;
   margin:0;
+  background-image: url('./assets/Images/2DCover.png');
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
@@ -52,7 +59,7 @@ button:hover {
 
 button .hoverText{
   opacity: 0;
-  transition: color 1.5s ease-out;
+  transition: color 1s ease-out;
 }
 
 button:hover .hoverText{
@@ -121,6 +128,8 @@ div .bottomRow{
 .fillerDiv{
   height: 60vh;
 }
+
+
 
 @media screen and (max-width: 1000px) {
   button .firstWord {
