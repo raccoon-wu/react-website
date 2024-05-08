@@ -17,11 +17,11 @@ export function FrontPageButton({ className, buttonText, clickMessage, hoverText
         >
             <span className="firstWord">{firstWord}</span>
             <span className="restOfText">{restOfText}</span>
-            {isHovered && (
+            
                 <div className="hoverTextContainer">
                     <span className="hoverText">{hoverText}</span>
                 </div>
-            )}
+            
         </button>
     );
 }

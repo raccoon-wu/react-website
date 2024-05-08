@@ -13,7 +13,7 @@ function App() {
                       <FrontPageButton
                           buttonText="2D ARTIST"
                           clickMessage=" "
-                          hoverText="Illustration"
+                          hoverText="Illustrations, Concept Design (Character, Creature + Assets), Animation"
                       />
                       <span className="andDisplay"> & </span>
                   </div>
@@ -21,7 +21,7 @@ function App() {
                       <FrontPageButton
                           buttonText="3D GENERALIST"
                           clickMessage=" "
-                          hoverText="UV"
+                          hoverText="Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation"
                       />
                   </div>
               </div>
