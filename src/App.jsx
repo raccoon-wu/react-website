@@ -1,6 +1,7 @@
 import './index.css'
 import Navbar from './assets/Components/NavBar/Navbar.jsx';
 import { FrontPageButton } from './Buttons.jsx';
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -12,18 +13,20 @@ function App() {
                   <div className='topRow'>
                       <FrontPageButton
                           buttonText="2D ARTIST"
-                          clickMessage=" "
                           hoverText="Illustrations, Concept Design (Character, Creature + Assets), Animation"
-                      />
+                      >
+                        <Link to="/2DPage"></Link>
+                        </FrontPageButton>
+
                       <span className="andDisplay"> & </span>
                   </div>
                   <div className='bottomRow'>
                       <FrontPageButton
                           buttonText="3D GENERALIST"
-                          clickMessage=" "
                           hoverText="Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation"
                       />
                   </div>
+
               </div>
           </div>
       </>
