@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Tw Italic';
+    src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');
+  } 
+
+.pageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+div .frontPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:5vw;
+    flex-wrap: wrap;
+  }
+  
+  .frontPageSelection {
+    height: 4vw;
+    margin:0.5vw;
+    transition: height 0.5s ease;
+  }
+  
+  .frontPageSelection:hover{
+    transform: scale(1.1);
+    filter:brightness(1.2);
+    transition: 0.5s ease;
+ 
+  }
+
+  div.hoverText{
+    position:fixed;
+    font-family: 'Tw Italic';
+    font-size: 22px;
+    color: #dbdbff;
+    text-align: center;
+    padding-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+  }
+
+@media (max-width: 1000px) {
+    .frontPageSelection {
+        height: 50px;
+      }
+      div.hoverText{
+        font-size:18px;
+      }
+}

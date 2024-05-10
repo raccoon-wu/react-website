@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import MainPage from './MainPage.jsx'
 import './index.css'
 import TwoDCollection from './2DPage.jsx'
+import ThreeDCollection from './3DPage.jsx'
+
 
 import {
   createBrowserRouter,
@@ -12,13 +14,18 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <MainPage/>,
   },
 
   {
     path: "2DPage",
     element: <TwoDCollection/>,
   },
+
+  {
+    path: "3DPage",
+    element: <ThreeDCollection/>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

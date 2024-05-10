@@ -2,7 +2,7 @@ import React from "react";
 
 function TwoDCollection(){
     return(
-        <h>i die now</h>
+        <h>Deadges in deadge</h>
     )
 }
 

@@ -4,7 +4,7 @@ import homeIcon from './homeIcon.png'
 const Navbar = () => {
     return (
         <nav>
-            <button><img className='homeButton' src={homeIcon}></img></button>
+            <img className='homeButton' src={homeIcon}></img>
             <ul>
                 <li>AMY WU</li>
             </ul>
