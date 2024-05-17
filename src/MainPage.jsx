@@ -19,24 +19,25 @@ function App() {
   return (
       <>
           <Navbar />
-          
-          <div className='pageContainer'>
-              <div className='frontPageContainer'>
-                  <Link to="/2Dpage"><img
-                        className="frontPageSelection"
-                        src="src/assets/Images/2DFont.svg"
-                        onMouseEnter={(e) => handleMouseEnter(e, 'Illustrations, Concept Design (Character, Creature + Assets), Animation')}
-                        onMouseLeave={handleMouseLeave}
-            /></Link>
-                  <Link to="/3Dpage"><img
-                        className="frontPageSelection"
-                        src="src/assets/Images/3DFont.svg"
-                        onMouseEnter={(e) => handleMouseEnter(e, 'Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx')}
-                        onMouseLeave={handleMouseLeave}
-            /></Link>
-              </div>
+          <div className = 'mainPageColor'>
+            <div className='pageContainer'>
+                <div className='frontPageContainer'>
+                    <Link to="/2Dpage"><img
+                          className="frontPageSelection"
+                          src="src/assets/Images/2DFont.svg"
+                          onMouseEnter={(e) => handleMouseEnter(e, 'Illustrations, Concept Design (Character, Creature + Assets), Animation')}
+                          onMouseLeave={handleMouseLeave}
+              /></Link>
+                    <Link to="/3Dpage"><img
+                          className="frontPageSelection"
+                          src="src/assets/Images/3DFont.svg"
+                          onMouseEnter={(e) => handleMouseEnter(e, 'Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx')}
+                          onMouseLeave={handleMouseLeave}
+              /></Link>
+                </div>
+            </div>
+            <div className="hoverText"></div>
           </div>
-          <div className="hoverText"></div>
       </>
   );
 }

@@ -3,18 +3,30 @@
     src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');
   } 
 
+.mainPageColor{
+  background-image: url('./assets/Images/2DCover.png');
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+    height: 100vh;
+    width: 100vw;
+}
 .pageContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30vh;
 }
 
 div .frontPageContainer {
+  padding-top: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:5vw;
+    width:60vw;
     flex-wrap: wrap;
   }
   
@@ -32,16 +44,14 @@ div .frontPageContainer {
   }
 
   div.hoverText{
-    position:fixed;
-    font-family: 'Tw Italic';
-    font-size: 22px;
-    color: #dbdbff;
-    text-align: center;
-    padding-top: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 300px;
+    font-family: 'Tw Italic';
+    font-size: 22px;
+    text-align: center;
+    color: #dbdbff;
+    margin: 30px;
   }
 
 @media (max-width: 1000px) {

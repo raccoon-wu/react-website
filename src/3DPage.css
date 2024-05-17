@@ -1,0 +1,22 @@
+.backgroundColor{
+    background-color:rgb(225, 142, 142);
+    width: 100vw;
+    height: 100vh;
+}
+.galleryContainer {
+    width: 95%;
+    margin: 0 auto; /* Center the galleryContainer */
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .images {
+    width: 30%;
+    padding: 5px;
+  }
+
+  .images:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+  }
