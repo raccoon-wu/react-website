@@ -1,22 +1,36 @@
+  .displayImage3D{
+    padding-top: 20px;
+    width:60%;
+    min-width: 600px;
+    display:flex;
+    margin: 0 auto;
+    }
+
 .backgroundColor{
-    background-color:rgb(225, 142, 142);
+    background-color: #0d0b32;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
+
 .galleryContainer {
-    width: 95%;
+  background-color: antiquewhite;  
+  padding-top: 5px;
+    width: 61vw;
+    min-width: 600px;
     margin: 0 auto; /* Center the galleryContainer */
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   
   .images {
-    width: 30%;
-    padding: 5px;
+    width: 32%;
+    min-width: 250px;
+    padding:5px;
   }
 
   .images:hover{
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: transform 0.5s ease;
   }
