@@ -16,14 +16,9 @@
 :root {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   color: #aaaaff;
-  background-image: url('./assets/Images/2DCover.png');
-  background-color: rgba(0, 0, 0, 0.8);
-  background-blend-mode: overlay;
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 

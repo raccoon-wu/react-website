@@ -9,16 +9,9 @@ nav {
     align-items: center;
 }
 
-ul li.mainPageTitle {
-    
-    font-size: 40px; /* Adjust the font size as needed */
-    font-weight: bold; /* Add any other styles you want for AMY WU */
-}
-
-li.mainPageTitle:hover{
-    filter: brightness(1.5);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
+.mainPageTitle{
+    font-family: 'Tw Cen MT Condensed Extra Bold';
+    font-size: 35px;
 }
 
 body {
@@ -26,42 +19,54 @@ body {
 }
 
 .homeButton{
-    margin-left: 20px;
-    width:40px;
-    top:50%;
-    left:50%;
-    border: none;
-    outline:none;   
-    cursor: pointer;
-    padding:2px;
-    border-radius: 100%;
-    z-index: 900;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .homeButton:hover{
     transition: 0.5s;
     transform: scale(1.1);
+} 
+
+.NavIcon{
+    max-height: 50px;
+    max-width: 50px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
 }
 
-.Nav3DOptions{
-    background-color: blue;
-    position: relative;
+.NavOptions{
     font-family: 'Tw Italic';
-    width:50vw;
-    left:50%;
-    transform: translate(-57%);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    margin:20px;
 }
 
 button {
     font-family: 'Tw Italic';
     color: white;
-    font-size: 1em;
     background-color: transparent;
     border:none;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .NavOptions{
+        justify-content: space-around;
+    }
+
+    .NavIcon{
+        max-height: 40px;
+        max-width: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

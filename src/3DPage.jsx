@@ -113,14 +113,15 @@ function ThreeDCollection(){
 		{/* Gallery images display */}
 			<div className="backgroundColor">
 				<Navbar/>
-				<img className="displayImage3D" src={CoverImage3D}></img>
-					<div className="galleryContainer">
-							{imageElements}
-					</div>
-			</div>
+				<div>
+					<img className="displayImage3D" src={CoverImage3D}></img>
+						<div className="galleryContainer">
+								{imageElements}
+						</div>
 
 		{/* Modal image display and interaction */}
-			{modalImage && (
+				
+				{modalImage && (
 				<>
 				<div className='arrowButtonsContainer'>
 					{imageIndex > 0 && (
@@ -142,6 +143,11 @@ function ThreeDCollection(){
 				</div>
 				</>
 			)}
+				</div>
+			</div>
+
+		
+			
         </>
     );
 }

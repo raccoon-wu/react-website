@@ -7,25 +7,28 @@ const Navbar = () => {
     const location = useLocation();
 
     return (
-        <>        <nav>
-            {/* Icons rendering */}
-            {location.pathname.toLowerCase() === "/3dpage" && <Link to="/"><img className='homeButton' src={homeIcon}></img></Link>}
+        <>
+            <nav>
+                {/* Left NavBar icon */}
+                <div className='NavIcon'>
+                    {location.pathname.toLowerCase() === "/3dpage" && <Link to="/"><img className='homeButton' src={homeIcon}></img></Link>}
+                </div>
 
-
-            {/* NavBar content rendering */}
-
-                    {location.pathname === "/" && <li className='mainPageTitle'>AMY WU</li>}
+                {/* Right NavBar options */}
+                <div className='NavOptions'>
+                    {location.pathname === "/" && <p className = 'mainPageTitle'>AMY WU</p>}
                     {location.pathname.toLowerCase() === "/2Dpage" && <li>2D Page</li>}
-                    {location.pathname.toLowerCase() === "/3dpage" && 
-                    <div className='Nav3DOptions'>
+                    {location.pathname.toLowerCase() === "/3dpage" &&
+                        <>
                             <button>CHARACTERS</button>
                             <button>OBJECTS</button>
                             <button>ENVIRONMENT</button>
-                    </div>
-                    }
+                        </>}
+                </div>
 
-        </nav>
-    </>
+
+            </nav>
+        </>
     )
 }
 
