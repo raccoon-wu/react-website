@@ -12,9 +12,8 @@
     min-height: 100vh;
 }
 
-.galleryContainer {
-  background-color: antiquewhite;  
-  padding-top: 5px;
+.galleryContainer { 
+    padding-top: 5px;
     width: 61vw;
     min-width: 600px;
     margin: 0 auto; /* Center the galleryContainer */
@@ -24,13 +23,84 @@
   }
   
   .images {
+    border-radius: 3%;
     width: 32%;
     min-width: 250px;
-    padding:5px;
+    margin:5px;
+    outline: 2px solid transparent;
   }
 
   .images:hover{
     cursor: pointer;
+    outline-color: white;
     transform: scale(1.03);
     transition: transform 0.5s ease;
   }
+
+  .enlargedImageContainer{
+    z-index:998;
+    position:fixed;
+    top: 50%; /* Place the modal image 50% from the top of the viewport */
+    left: 50%; /* Place the modal image 50% from the left of the viewport */
+    transform: translate(-50%, -50%); /* Center the modal image horizontally and vertically */
+    background-color: rgba(27, 27, 27, 0.34);
+    overflow: hidden;
+    display: flex; /* Use flexbox for centering the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+
+  .enlargedImage{
+    height: 80vh;
+    width: auto;
+    object-fit: contain; /* Maintain aspect ratio of the image */
+  }
+
+  .greyOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(2, 1, 23, 0.8); /* Semi-transparent gray background */
+    z-index: 997; /* Ensure the overlay is behind the modal image container */
+}
+  
+.arrowButtonsContainer{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 90vw;
+  justify-content: center;
+}
+
+.leftArrowButton,
+.rightArrowButton {
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+}
+
+.leftArrowButton {
+  left:20px;
+  transform: translateX(-50%);
+  
+}
+.rightArrowButton {
+  right:20px;
+  transform: translateX(50%);
+}
+
+.arrowButtonImage{
+  height:50px;
+}
+
+.arrowButtonImage:hover{
+  filter:brightness(1.2);
+  transform: scale(1.1);
+  transition: 0.5s;
+}
