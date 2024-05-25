@@ -34,20 +34,24 @@ body {
     margin-left: 20px;
     display: flex;
     align-items: center;
-    overflow: hidden;
+
     position: relative;
     margin-right: 20px;
 }
 
 .NavOptions{
+    width: 50px;
     font-family: 'Tw Italic';
     display: flex;
     justify-content: space-evenly;
     flex-grow: 1;
-    margin:20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    transition:0.2s;
 }
 
 button {
+    font-size: 1em;
     font-family: 'Tw Italic';
     color: white;
     background-color: transparent;
@@ -60,7 +64,8 @@ button:hover{
 
 @media (max-width: 1000px) {
     .NavOptions{
-        justify-content: space-around;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 
     .NavIcon{

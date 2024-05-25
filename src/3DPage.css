@@ -1,44 +1,38 @@
-body{
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.backgroundColor{
+  background-color: #0d0b32;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.galleryImages{
+  width: 60%;
+  margin: auto; /* Center the Nav3DOptions block */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .displayImage3D{
-    padding-top: 20px;
-    width:60%;
-    display:flex;
-    margin: 0 auto;
-    }
-
-.backgroundColor{
-    background-color: #0d0b32;
-    min-width: 100%;
-    min-height: 100%;
+  margin:10px;
+}
+.images {
+  flex: 1 1 calc(32% - 10px); /* Adjust width to 50% for smaller screens */
+  margin: 3px; /* Add some margin between images */
+  border-radius: 3%;
+  width: 32%; /* Adjust width to account for margin */
+  outline: 2px solid transparent;
 }
 
-.galleryContainer { 
-    padding-top: 5px;
-    width: 61vw;
-    margin: 0 auto; /* Center the galleryContainer */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .images {
-    border-radius: 3%;
-    width: 32%;
-    margin:5px;
-    outline: 2px solid transparent;
-  }
+.images:hover{
+  cursor: pointer;
+  outline-color: white;
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
 
-  .images:hover{
-    cursor: pointer;
-    outline-color: white;
-    transform: scale(1.03);
-    transition: transform 0.5s ease;
-  }
+.displayImage3D{
+  width: 100%;
+    }
 
   .enlargedImageContainer{
     z-index:998;
@@ -106,4 +100,16 @@ body{
   filter:brightness(1.2);
   transform: scale(1.1);
   transition: 0.5s;
+}
+
+@media (max-width: 1000px) {
+  .galleryImages{
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .images {
+    width: 40%; /* Adjust width to account for margin */
+  }
 }
