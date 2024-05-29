@@ -10,16 +10,24 @@ import Navbar from './assets/Components/NavBar/Navbar';
 
 function ThreeDCollection(){
 	const presetsOfCharacters = [
-		{id:4, name:'Necromancer Female', images:[GalleryImages.NF_1,GalleryImages.NF_2,GalleryImages.NF_4,GalleryImages.NF_3]},
-		{id:3, name:'Necromancer Male', images:[GalleryImages.NM_1,GalleryImages.NM_2,GalleryImages.NM_3,GalleryImages.NM_4]},
-		{id:1, name:'Ashashin Female', images:[GalleryImages.AF_1,GalleryImages.AF_2,GalleryImages.AF_3,GalleryImages.AF_4]},
-		{id:2, name:'Azhasheen Male', images:[GalleryImages.AM_1,GalleryImages.AM_2,GalleryImages.AM_3,GalleryImages.AM_4]},
-		{id: 6, name: 'Mercenary Male', images: [GalleryImages.MeM_1, GalleryImages.MeM_2, GalleryImages.MeM_3, GalleryImages.MeM_4] },
-		{id: 5, name: 'Mercenary Female', images: [GalleryImages.MeF_1, GalleryImages.MeF_2, GalleryImages.MeF_3, GalleryImages.MeF_4] },
-		{ id: 7, name: 'BF_1', images: [GalleryImages.BF_1, GalleryImages.BF_2, GalleryImages.BF_3, GalleryImages.BF_4] },
-    	{ id: 8, name: 'BM_1', images: [GalleryImages.BM_1, GalleryImages.BM_2, GalleryImages.BM_3, GalleryImages.BM_4] }
+		{id:4, name:'Eldritch Witch', images:[GalleryImages.NF_1,GalleryImages.NF_2,GalleryImages.NF_4,GalleryImages.NF_3]},
+		{id:3, name:'Eldritch Warlock', images:[GalleryImages.NM_1,GalleryImages.NM_2,GalleryImages.NM_3,GalleryImages.NM_4]},
+		{id:1, name:'Desert Tribes Assassin Female', images:[GalleryImages.AF_1,GalleryImages.AF_2,GalleryImages.AF_3,GalleryImages.AF_4]},
+		{id:2, name:'Desert Tribes Assassin Male', images:[GalleryImages.AM_1,GalleryImages.AM_2,GalleryImages.AM_3,GalleryImages.AM_4]},
+		{id: 6, name: 'Dark Woods Warrior', images: [GalleryImages.MeM_1, GalleryImages.MeM_2, GalleryImages.MeM_3, GalleryImages.MeM_4] },
+		{id: 5, name: 'Dark Woods Archer', images: [GalleryImages.MeF_1, GalleryImages.MeF_2, GalleryImages.MeF_3, GalleryImages.MeF_4] },
+		{ id: 7, name: 'Dwarf Pirate', images: [GalleryImages.BF_1, GalleryImages.BF_2, GalleryImages.BF_3, GalleryImages.BF_4] },
+    	{ id: 8, name: 'Minotaur Pirate', images: [GalleryImages.BM_1, GalleryImages.BM_2, GalleryImages.BM_3, GalleryImages.BM_4] }
 	];
 	
+	const presetOfObjects = [
+		{ id: 1, name: 'Crab Lantern', images: [GalleryImages.C_1, GalleryImages.C_2, GalleryImages.C_3, GalleryImages.C_W] },
+		{ id: 2, name: 'Eel Lamp', images: [GalleryImages.E_1, GalleryImages.E_2, GalleryImages.E_3, GalleryImages.E_W] },
+		{ id: 3, name: 'Jellyfish Compass', images: [GalleryImages.J_1, GalleryImages.J_2, GalleryImages.J_3, GalleryImages.J_W] },
+		{ id: 4, name: 'Shark Lamp', images: [GalleryImages.S_1, GalleryImages.S_2, GalleryImages.S_3, GalleryImages.S_W] },
+		{ id: 5, name: 'Octopus Bottle', images: [GalleryImages.T_1, GalleryImages.T_2, GalleryImages.T_3, GalleryImages.T_W] },
+		{ id: 6, name: 'Faberge Egg', images: [GalleryImages.Egg_1, GalleryImages.Egg_W] }
+	];
 	//An array to store the names of the first image of each object
 	const displayImages = presetsOfCharacters.map(presetsOfCharacters => presetsOfCharacters.images[0]);
 	
