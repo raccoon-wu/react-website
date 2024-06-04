@@ -1,33 +1,68 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import MainPage from './MainPage.jsx'
+import React, { useState } from "react";
+import NavBar from "./assets/Components/NavBar/Navbar.jsx";
 import './index.css'
-import TwoDCollection from './2DPage.jsx'
-import ThreeDCollection from './3DPage.jsx'
+import { Link } from "react-router-dom";
 
+function Main() {
+  const [toggleRenderer, setToggleRenderer] = useState('');
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+  const toggle2D = () => { setToggleRenderer('2D'); };
+  const toggle3D = () => { setToggleRenderer('3D'); };
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainPage/>,
-  },
+  return (
+    <>
+      <NavBar />
+      <Link to="/3DGallery"><button onClick={toggle3D}>3D</button></Link>
+      <Link to="/2DGallery"><button onClick={toggle2D}>2D</button></Link>
+    </>
+  );
+}
 
-  {
-    path: "2DPage",
-    element: <TwoDCollection/>,
-  },
+export default Main;
 
-  {
-    path: "3DPage",
-    element: <ThreeDCollection/>,
-  }
-]);
+// import './index.css'
+// import './MainPage.css'
+// import Navbar from './assets/Components/NavBar/Navbar.jsx';
+// import { Link } from "react-router-dom";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}/>
-);
+// function handleMouseEnter(event, text) {
+//   const target = event.target;
+//   const div = document.querySelector('.hoverText');
+//   div.textContent = text;
+// }
+
+// function handleMouseLeave(event) {
+//   const target = event.target;
+//   const div = document.querySelector('.hoverText');
+//   div.textContent = '';
+// }
+
+// function App() {
+//   return (
+//     <>
+
+//       <div className='mainPageColor'>
+//       <Navbar />
+//         <div className='pageContainer'>
+//           <div className='frontPageContainer'>
+//             <Link to="/2Dpage"><img
+//               className="frontPageSelection"
+//               src="src/assets/Images/2DFont.svg"
+//               onMouseEnter={(e) => handleMouseEnter(e, 'Illustrations, Concept Design (Character, Creature + Assets), Animation')}
+//               onMouseLeave={handleMouseLeave}
+//             /></Link>
+//             <Link to="/3Dpage"><img
+//               className="frontPageSelection"
+//               src="src/assets/Images/3DFont.svg"
+//               onMouseEnter={(e) => handleMouseEnter(e, 'Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx')}
+//               onMouseLeave={handleMouseLeave}
+//             /></Link>
+//           </div>
+//         </div>
+//         <div className="hoverText"></div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App

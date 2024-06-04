@@ -12,7 +12,7 @@
   font-family: 'Tw Italic';
   src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');
 } 
-
+/* 
 :root {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   color: #aaaaff;
@@ -31,7 +31,12 @@ h1 {
   font-size: 5em;
   line-height: 1.1;
   text-align: center;
-  margin: auto; /* Added to center horizontally */
+  margin: auto; 
   padding: 20px;
 }
+ */
 
+ :root{
+  font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
+  font-size: 30px;
+ }
