@@ -17,7 +17,6 @@ function Main() {
     </>
   );
 }
-//gay
 export default Main;
 
 // import './index.css'

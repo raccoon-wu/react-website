@@ -40,3 +40,8 @@ h1 {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   font-size: 30px;
  }
+
+ button{
+  font-size: 30px;
+  height:50px;
+ }
