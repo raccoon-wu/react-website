@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar/Navbar.jsx";
+// import { presetsOf3DCharacters } from "../../3DGalleryRenders/3DPresets.js";
 
 function Gallery3D() {
   return (

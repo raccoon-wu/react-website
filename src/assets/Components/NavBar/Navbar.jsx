@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 
 const NavBar = () => {
   const location = useLocation();
+  const [toggleRenderer, setToggleRenderer] = useState('');
+
+  const handleRenderSet = (value) =>  { setToggleRenderer(value); };
 
   return (
     <>
@@ -17,9 +20,9 @@ const NavBar = () => {
       {/* For 3D page */}
       {location.pathname.toLowerCase() === "/3dgallery" && 
       <>
-            <button>Characters</button>
-            <button>Objects</button>
-            <button>Environments</button>
+            <button onClick={() => handleButtonClick('Characters')}>Characters</button>
+            <button onClick={() => handleButtonClick('Objects')}>Objects</button>
+            <button onClick={() => handleButtonClick('Characters')}>Environments</button>
       </>
       }      
 
