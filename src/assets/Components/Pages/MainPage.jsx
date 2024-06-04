@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import NavBar from "./assets/Components/NavBar/Navbar.jsx";
-import './index.css'
+import NavBar from "../../../assets/Components/NavBar/Navbar.jsx";
+import '../../../index.css'
 import { Link } from "react-router-dom";
 
-function Main() {
+function MainPage( {presetState, setPresetState}) {
 
   return (
     <>
       <NavBar />
+      <h1>AM home PAGE, current state is {presetState}</h1>
       <Link to="/3DGallery"><button >3D</button></Link>
       <Link to="/2DGallery"><button >2D</button></Link>
     </>
   );
 }
-export default Main;
+export default MainPage;
 
 // import './index.css'
 // import './MainPage.css'

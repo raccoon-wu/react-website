@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState }from "react";
 import NavBar from "../NavBar/Navbar.jsx";
+import { Link } from 'react-router-dom';
+import Renderer from "../Renderer.jsx";
 // import { presetsOf3DCharacters } from "../../3DGalleryRenders/3DPresets.js";
 
-function Gallery3D() {
+function Gallery3D({ presetState, setPresetState }) {
+  
   return (
     <>
-        <NavBar/>
-        <h1>AM 3D PAGE</h1>
+        <NavBar setPresetState={setPresetState}/>
+        <Link to="/"><button >Homu</button></Link>
+        <h1>AM 3D PAGE, current state is {presetState}</h1>
+        <Renderer presetState={presetState}/>
     </>
   );
 }
