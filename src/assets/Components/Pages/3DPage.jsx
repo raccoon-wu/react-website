@@ -4,7 +4,7 @@ import NavBar from "../NavBar/Navbar.jsx";
 function Gallery3D() {
   return (
     <>
-        <NavBar/>
+        {/* <NavBar/> */}
         <h1>AM 3D PAGE</h1>
     </>
   );

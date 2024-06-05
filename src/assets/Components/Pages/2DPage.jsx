@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "../NavBar/Navbar.jsx";
 
-function Gallery2D() {
+function Gallery2D(){
   return (
     <>
-        <NavBar/>
+        {/* <NavBar/> */}
         <h1>AM 2D PAGE</h1>
     </>
   );

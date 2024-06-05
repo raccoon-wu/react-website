@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import NavBar from "./assets/Components/NavBar/Navbar.jsx";
-import './index.css'
+import NavBar from "../NavBar/Navbar.jsx";
+import '../../../index.css'
 import { Link } from "react-router-dom";
 
-function Main() {
+function MainPage() {
   const [toggleRenderer, setToggleRenderer] = useState('');
 
   const toggle2D = () => { setToggleRenderer('2D'); };
@@ -11,13 +11,13 @@ function Main() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Link to="/3DGallery"><button onClick={toggle3D}>3D</button></Link>
       <Link to="/2DGallery"><button onClick={toggle2D}>2D</button></Link>
     </>
   );
 }
-export default Main;
+export default MainPage;
 
 // import './index.css'
 // import './MainPage.css'
