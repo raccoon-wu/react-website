@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Renderer from "../Renderer.jsx";
 // import { presetsOf3DCharacters } from "../../3DGalleryRenders/3DPresets.js";
 
-function Gallery3D({ presetState, setPresetState }) {
+function Gallery3D() {
   
   return (
     <>

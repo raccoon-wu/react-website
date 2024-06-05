@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 function MainPage() {
   const [toggleRenderer, setToggleRenderer] = useState('');
 
+  const toggle2D = () => { setToggleRenderer('2D'); };
+  const toggle3D = () => { setToggleRenderer('3D'); };
   return (
     <>
       {/* <NavBar /> */}

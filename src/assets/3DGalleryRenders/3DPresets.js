@@ -1,4 +1,3 @@
-import React from 'react';
 import * as Char3D from "./Characters/charactersExport";
 import * as Obj3D from "./Objects/objectExport";
 import * as Env3D from "./Environments/environmentsExport";
