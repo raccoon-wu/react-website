@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState }from "react";
 import NavBar from "../NavBar/Navbar.jsx";
+import { Link } from 'react-router-dom';
+import Renderer from "../Renderer.jsx";
+// import { presetsOf3DCharacters } from "../../3DGalleryRenders/3DPresets.js";
 
-function Gallery3D() {
+function Gallery3D({ presetState, setPresetState }) {
+  
   return (
     <>
         {/* <NavBar/> */}

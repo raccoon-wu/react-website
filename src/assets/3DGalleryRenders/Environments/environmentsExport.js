@@ -1,0 +1,1 @@
+export { default as I_1 } from './I_1.png';
