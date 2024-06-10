@@ -1,20 +1,19 @@
 import React, { useState }from "react";
 import NavBar from "../NavBar/Navbar.jsx";
 import { Link } from 'react-router-dom';
-import Renderer from "../Renderer.jsx";
-// import { presetsOf3DCharacters } from "../../3DGalleryRenders/3DPresets.js";
+import Renderer from '../Renderer.jsx'
 
-function Gallery3D() {
+function Page3D() {
   
   return (
     <>
-        {/* <NavBar/> */}
-        <h1>AM 3D PAGE</h1>
+        <Renderer></Renderer>
+        <Link to="/"><button>Home</button></Link>
     </>
   );
 }
 
-export default Gallery3D;
+export default Page3D;
 
 // import React from "react";
 // import './3DPage.css'

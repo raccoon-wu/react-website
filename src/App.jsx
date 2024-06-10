@@ -9,7 +9,8 @@ import NavBar from './assets/Components/NavBar/Navbar.jsx';
 // App is always running
 const App = () => {
   // presetSelection = getter
-  // const [getPresetState, setPresetState] = useState('');
+  const [get2DPreset, set2DPreset] = useState(null);
+  const [get3DPreset, set3DPreset] = useState(null);
   
   return (
     // The Router, Routes, Route system is a custom version of createBrowserRouter() which is a preset
@@ -26,14 +27,17 @@ const App = () => {
     // Route specifies what paths are rendered when the URL matches the specified path
 
     <Router>
-     <NavBar />
+    <NavBar set2DPreset={set2DPreset} get2DPreset={get2DPreset} 
+             set3DPreset={set3DPreset} get3DPreset={get3DPreset} > </NavBar>
+
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/2DGallery" element={<Gallery2D />} />
-        <Route path="/3DGallery" element={<Gallery3D />} />
+        <Route path="/2DGallery" element={<Gallery2D set2DPreset={set2DPreset} get2DPreset={get2DPreset}></Gallery2D>} />
+        <Route path="/3DGallery" element={<Gallery3D set3DPreset={set3DPreset} get3DPreset={get3DPreset}></Gallery3D>} />
       </Routes>
     </Router>
   );
 };
+
 
 export default App;

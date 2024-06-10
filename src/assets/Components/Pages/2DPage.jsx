@@ -1,13 +1,15 @@
 import React from "react";
 import NavBar from "../NavBar/Navbar.jsx";
+import { Link } from "react-router-dom";
+import Renderer from '../Renderer.jsx'
 
-function Gallery2D(){
+function Page2D(set2DPreset, get2DPreset){
   return (
     <>
-        {/* <NavBar/> */}
-        <h1>AM 2D PAGE</h1>
+        <Renderer></Renderer>
+        <Link to="/"><button>Home</button></Link>
     </>
   );
 }
 
-export default Gallery2D;
+export default Page2D;

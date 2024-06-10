@@ -1,6 +1,5 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 
 // Routing.jsx only purpose is to display the 'root' (App.jsx)

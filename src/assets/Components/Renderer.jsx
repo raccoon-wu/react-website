@@ -1,10 +1,25 @@
 import React from "react";
-import { presetsOf3DCharacters } from "../3DGalleryRenders/3DPresets";
+import { useLocation } from 'react-router-dom';
 
-function Renderer({presetState}) {
-  const name = presetState;
+function Renderer() {
+
+  const location = useLocation();
+
   return (
-    <h1>Deadges in deadge {name}</h1>
+    <>
+      {location.pathname.toLowerCase() === "/3dgallery" && 
+      <>
+            <p>Page is 3D now</p>
+      </>
+      }      
+
+      {location.pathname.toLowerCase() === "/2dgallery" && 
+      <>
+            <p>Page is 222222D now</p>
+      </>
+      }     
+    </>
+
 
   );
 }

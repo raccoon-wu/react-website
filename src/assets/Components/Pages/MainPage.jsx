@@ -4,15 +4,11 @@ import '../../../index.css'
 import { Link } from "react-router-dom";
 
 function MainPage() {
-  const [toggleRenderer, setToggleRenderer] = useState('');
-
-  const toggle2D = () => { setToggleRenderer('2D'); };
-  const toggle3D = () => { setToggleRenderer('3D'); };
   return (
     <>
       {/* <NavBar /> */}
-      <Link to="/3DGallery"><button onClick={toggle3D}>3D</button></Link>
-      <Link to="/2DGallery"><button onClick={toggle2D}>2D</button></Link>
+      <Link to="/3DGallery"><button>3D</button></Link>
+      <Link to="/2DGallery"><button>2D</button></Link>
     </>
   );
 }
