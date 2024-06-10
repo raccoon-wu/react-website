@@ -6,11 +6,14 @@ import Gallery2D from './assets/Components/Pages/2DPage.jsx';
 import Gallery3D from './assets/Components/Pages/3DPage.jsx';
 import NavBar from './assets/Components/NavBar/Navbar.jsx';
 
+import { presetsOf3DCharacters} from './assets/3DGalleryRenders/3DPresets.js';
+import { presetsOf2DCharacters } from './assets/2DGalleryRenders/2DPresets.js';
+
 // App is always running
 const App = () => {
   // presetSelection = getter
-  const [get2DPreset, set2DPreset] = useState(null);
-  const [get3DPreset, set3DPreset] = useState(null);
+  const [get2DPreset, set2DPreset] = useState(presetsOf2DCharacters);
+  const [get3DPreset, set3DPreset] = useState(presetsOf3DCharacters);
   
   return (
     // The Router, Routes, Route system is a custom version of createBrowserRouter() which is a preset
@@ -32,8 +35,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/2DGallery" element={<Gallery2D set2DPreset={set2DPreset} get2DPreset={get2DPreset}></Gallery2D>} />
-        <Route path="/3DGallery" element={<Gallery3D set3DPreset={set3DPreset} get3DPreset={get3DPreset}></Gallery3D>} />
+        <Route path="/2DGallery" element={<Gallery2D></Gallery2D>} />
+        <Route path="/3DGallery" element={<Gallery3D></Gallery3D>} />
       </Routes>
     </Router>
   );

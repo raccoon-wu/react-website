@@ -2,12 +2,14 @@ import React, { useState }from "react";
 import NavBar from "../NavBar/Navbar.jsx";
 import { Link } from 'react-router-dom';
 import Renderer from '../Renderer.jsx'
+import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../../3DGalleryRenders/3DPresets.js';
 
 function Page3D() {
-  
+  const get3DPreset = [...presetsOf3DCharacters, ...presetOf3DObjects, ...presetOf3DEnvironments];
+
   return (
     <>
-        <Renderer></Renderer>
+        <Renderer get3DPreset={get3DPreset}></Renderer>
         <Link to="/"><button>Home</button></Link>
     </>
   );
