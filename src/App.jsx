@@ -11,7 +11,8 @@ import { presetsOf2DCharacters } from './assets/2DGalleryRenders/2DPresets.js';
 
 // App is always running
 const App = () => {
-  // presetSelection = getter
+
+  // *** used to be both be useState('') but I wanted to set a default state in case that's breaking it
   const [get2DPreset, set2DPreset] = useState(presetsOf2DCharacters);
   const [get3DPreset, set3DPreset] = useState(presetsOf3DCharacters);
   
@@ -35,8 +36,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/2DGallery" element={<Gallery2D></Gallery2D>} />
-        <Route path="/3DGallery" element={<Gallery3D></Gallery3D>} />
+        <Route path="/2DGallery" element={<Gallery2D set2DPreset={set2DPreset} get2DPreset={get2DPreset} ></Gallery2D>} />
+        <Route path="/3DGallery" element={<Gallery3D set3DPreset={set3DPreset} get3DPreset={get3DPreset}></Gallery3D>} />
       </Routes>
     </Router>
   );

@@ -15,11 +15,12 @@ export const presetsOf3DCharacters = [
 
 export const presetOf3DObjects = [
     { id: 1, name: 'Crab Lantern', images: [Obj3D.C_1, Obj3D.C_2, Obj3D.C_3, Obj3D.C_W] },
-    { id: 2, name: 'Eel Lamp', images: [Obj3D.E_1, Obj3D.E_2, Obj3D.E_3, Obj3D.E_W] },
-    { id: 3, name: 'Jellyfish Compass', images: [Obj3D.J_1, Obj3D.J_2, Obj3D.J_3, Obj3D.J_W] },
-    { id: 4, name: 'Shark Lamp', images: [Obj3D.S_1, Obj3D.S_2, Obj3D.S_3, Obj3D.S_W] },
+    { id: 2, name: 'Eel Lamp', images: [Obj3D.E_3, Obj3D.E_1, Obj3D.E_2, Obj3D.E_W] },
+    { id: 3, name: 'Jellyfish Compass', images: [Obj3D.J_3, Obj3D.J_1, Obj3D.J_2, Obj3D.J_W] },
     { id: 5, name: 'Octopus Bottle', images: [Obj3D.T_1, Obj3D.T_2, Obj3D.T_3, Obj3D.T_W] },
+    { id: 4, name: 'Shark Lamp', images: [Obj3D.S_1, Obj3D.S_2, Obj3D.S_3, Obj3D.S_W] },
     { id: 6, name: 'Faberge Egg', images: [Obj3D.Egg_1, Obj3D.Egg_W] }
+    
 ];
 
 export const presetOf3DEnvironments = [

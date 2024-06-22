@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import Renderer from '../Renderer.jsx'
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../../3DGalleryRenders/3DPresets.js';
 
-function Page3D() {
-  const get3DPreset = [...presetsOf3DCharacters, ...presetOf3DObjects, ...presetOf3DEnvironments];
+const Page3D = ({get3DPreset, set3DPreset}) => {
 
   return (
     <>

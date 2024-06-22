@@ -3,3 +3,28 @@
     background-color: rgb(17, 99, 32);
     width: 500px;
 }
+
+.galleryDisplayImages{
+    width:200px;
+}
+
+.modalImageContainer{
+    position:absolute;
+    height:100%;
+    width: 100%;
+    z-index: 1;
+    top: 50%; /* Place the modal image 50% from the top of the viewport */
+    left: 50%; /* Place the modal image 50% from the left of the viewport */
+    transform: translate(-50%, -50%); /* Center the modal image horizontally and vertically */
+    background-color: rgba(27, 27, 27, 0.9);
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.modalImage{
+    height:80vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
