@@ -8,39 +8,20 @@ import cover2D from "../../Images/2DCover.png";
 function MainPage() {
 
   //a useState to track which button is being hovered, so text hover can appear
-  const [hoveredButton, setHoveredButton] = useState(null);
-  const [fadeOutImage, setFadeOutImage] = useState(null);
-  console.log(hoveredButton);
+  const [backgroundImage, setBackgroundImage] = useState(null);
 
   return (
     <>
       <div className="mainPageFlexbox">
 
-      {/* <div className="backgroundImageDiv">
-          {hoveredButton === '2D' && <img className="backgroundImageLeft" src={cover2D}/>}
-          {hoveredButton === '3D' && <img className="backgroundImageRight" src={cover3D}/>}
-          {hoveredButton !== '2D' && <img className="backgroundImageLeft fade-out" src={cover2D} />}
-          {hoveredButton !== '3D' && <img className="backgroundImageRight fade-out" src={cover3D} />}
-
-
-      </div> */}
       {/* Hovering over buttons changes background image */}
       <div className="backgroundImageDiv">
-        {hoveredButton === '2D' && <img className="backgroundImageLeft" src={cover2D}/>}
-        {hoveredButton === '3D' && <img className="backgroundImageRight" src={cover3D}/>}
-        {fadeOutImage === '2D' && <img className="backgroundImageLeft fade-out" src={cover2D}/>}
-        {fadeOutImage === '3D' && <img className="backgroundImageRight fade-out" src={cover3D}/>}
-      </div>
+        {backgroundImage === '2DFadeIn' && <img className="backgroundImageLeftFadeIn" src={cover2D}/>}
+        {backgroundImage === '3DFadeIn' && <img className="backgroundImageRightFadeIn" src={cover3D}/>}
+        {backgroundImage === '2DFadeOut' && <img className="backgroundImageLeftFadeOut" src={cover2D}/>}
+        {backgroundImage === '3DFadeOut' && <img className="backgroundImageRightFadeOut" src={cover3D}/>}
 
-          {/* {(hoveredButton !== '2D' && hoveredButton !== '3D') && (
-        <div className="backgroundImageDiv">
-          {hoveredButton === '2D' ? (
-            <img className="backgroundImageLeft fade-out" src={cover2D} />
-          ) : (
-            <img className="backgroundImageRight fade-out" src={cover3D} />
-          )}
-        </div>
-      )} */}
+      </div>
 
         <div className="mainPageReposition">
           <div className="mainPageButtonContainer">
@@ -48,14 +29,14 @@ function MainPage() {
               <Link to="/2DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/2DFont.svg"
-                    onMouseEnter={()=> setHoveredButton('2D')}
-                    onMouseLeave={()=> {setHoveredButton(null);  setFadeOutImage('2D'); 
+                    onMouseEnter={()=> setBackgroundImage('2DFadeIn')}
+                    onMouseLeave={()=> {
+                      setBackgroundImage('2DFadeOut'); 
+                      console.log("leaving 2d");
 
-                      //****
                       setTimeout(()=> {
-                        setFadeOutImage(null);
+                        setBackgroundImage('Gradient');
                       }, 500);
-                      //****
                       
                     }}/>
                 </button>
@@ -64,14 +45,14 @@ function MainPage() {
               <Link to="/3DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/3DFont.svg"
-                    onMouseEnter={()=> setHoveredButton('3D')}
-                    onMouseLeave={()=> {setHoveredButton(null);  setFadeOutImage('3D');
+                    onMouseEnter={()=> setBackgroundImage('3DFadeIn')}
+                    onMouseLeave={()=> {
+                      setBackgroundImage('3DFadeOut');  
+                      console.log("leaving 3d");
 
-                      //****
                       setTimeout(()=> {
-                        setFadeOutImage(null);
+                        setBackgroundImage('Gradient');
                       }, 500);
-                      //****
 
                     }}/>
                 </button>
@@ -79,14 +60,14 @@ function MainPage() {
 
           </div>
 
-          {hoveredButton === '2D' && 
+          {backgroundImage === '2D' && 
 
           <div className="hoverTextDiv">
               <p className="hoverText">Illustrations, Concept Design (Character, Creature + Assets), Animation</p>
           </div>
           }
 
-          {hoveredButton === '3D' && 
+          {backgroundImage === '3D' && 
           <div className="hoverTextDiv">
               <p className="hoverText">Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx</p>
           </div>

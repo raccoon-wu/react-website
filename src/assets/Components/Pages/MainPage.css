@@ -29,29 +29,36 @@
   overflow: hidden;
 }
 
-.backgroundImageLeft{
+.backgroundImageLeftFadeIn{
   width: auto;
   height:100%;
   opacity:0;
-  /* animation: fadeIn 0.5s ease-in forwards; */
+  animation: fadeIn 0.5s ease-in forwards;
   float:left;
   }
 
-.backgroundImageRight{
+.backgroundImageRightFadeIn{
   width: auto;
   height:100%;
   opacity:0;
-  /* animation: fadeIn 0.5s ease-in forwards; */
+  animation: fadeIn 0.5s ease-in forwards;
   float:right;
 }
 
-/* Animation for fading in */
-.backgroundImageLeft.fade-in {
-  animation: fadeIn 0.5s ease-in forwards;
-}
+.backgroundImageLeftFadeOut{
+  width: auto;
+  height:100%;
+  opacity:0;
+  animation: fadeOut 0.5s ease-out forwards;
+  float:left;
+  }
 
-.backgroundImageRight.fade-in {
-  animation: fadeIn 0.5s ease-in forwards;
+.backgroundImageRightFadeOut{
+  width: auto;
+  height:100%;
+  opacity:0;
+  animation: fadeOut 0.5s ease-out forwards;
+  float:right;
 }
 
 
