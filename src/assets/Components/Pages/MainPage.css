@@ -1,3 +1,117 @@
+@keyframes fadeIn {
+  from{ opacity: 0;}
+  to {opacity: 0.5;}
+}
+
+@keyframes fadeOut{
+  from{ opacity: 0.5;}
+  to {opacity: 0;}
+}
+
+.backgroundGradient{
+  width: 100vw;
+  height: calc(100vh - 80px);
+  /* background-color: linear-gradient; */
+}
+.mainPageFlexbox{
+  /* adding a flex box so all children elements will be centred*/
+  display: flex;
+  align-items: center; /* Centers vertically */
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 80px);
+}
+
+.backgroundImageDiv{
+  width: 100vw;
+  height: calc(100vh - 85px);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.backgroundImageLeft{
+  width: auto;
+  height:100%;
+  opacity:0;
+  /* animation: fadeIn 0.5s ease-in forwards; */
+  float:left;
+  }
+
+.backgroundImageRight{
+  width: auto;
+  height:100%;
+  opacity:0;
+  /* animation: fadeIn 0.5s ease-in forwards; */
+  float:right;
+}
+
+/* Animation for fading in */
+.backgroundImageLeft.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.backgroundImageRight.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+
+/* Animation for fading out */
+.backgroundImageLeft.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.backgroundImageRight.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.mainPageReposition{
+  position: absolute;
+  top:42%;
+}
+.mainPageButtonContainer{
+  height:100px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+.mainPageButton{
+  background-color: transparent;
+  border: none;
+}
+
+.mainButtonImage{
+  height:4vw;
+  min-height: 50px;
+  padding: 2px;
+}
+
+.mainButtonImage:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: 0.5s ease;
+  filter: brightness(1.2);
+  transition: filter 0.3s ease-in-out;
+}
+
+.hoverTextDiv{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2vw;
+  height: 200px;
+
+}
+
+.hoverText{
+  width: 80%;
+  font-family: 'Tw Italic';
+  font-size: 22px;
+  color: #dbdbff;
+}
 /* @font-face {
     font-family: 'Tw Italic';
     src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');

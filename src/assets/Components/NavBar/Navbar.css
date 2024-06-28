@@ -1,22 +1,53 @@
-.navBarDiv{
-    width: 100%;
-    color: aliceblue;
-    background-color: black;
+.navBarFlexBox{
     display: flex;
-    margin: 0;
+    background-color: #18145b;
 }
 
-/* nav {
+.navBarLeftButton{
+    display: flex;
+    height:80px;
+    width: 80px;
+    /* background-color: aqua; */
+
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.navBarLeftImage{
+    width: 50%;
+    height: 50%;
+}
+
+.navBarLeftImage:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.navBarDiv{
     width:100%;
     color:#ffffff;
-    height: 70px;
-    background-color: #18145b;
+    height: 80px;
     display: flex;
     top: 0;
     margin: 0;
     align-items: center;
+    justify-content: center; /* Horizontally center */
 }
 
+
+
+.NavBarTextFrontPage{
+    margin-left: -80px; /* minusing left imagebox so it's still centred */
+    font-size: 40px;
+}
+.NavBarTextFrontPage:hover{
+    cursor: default;
+}
+
+
+
+/* 
 nav ul {
     list-style-type:none;
     text-align: center;
@@ -64,4 +95,4 @@ body {
     nav ul li{
         font-size: 35px;
     }
-} */
+}  */

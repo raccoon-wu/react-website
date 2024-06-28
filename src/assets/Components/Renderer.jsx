@@ -28,13 +28,10 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
       if (location.pathname.toLowerCase() === "/3dgallery") {
         //Conditional rendering depending on which preset is chosen
         if (get3DPreset === presetsOf3DCharacters){
-          console.log('Character is selected');
           setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images[0]).flat() : []);
         } else if (get3DPreset === presetOf3DObjects){
-          console.log('Object is selected');
           setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images[0]).flat() : []);
         } else if (get3DPreset === presetOf3DEnvironments){
-          console.log('Environment is selected');
           setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images).flat() : []);
         }
        
@@ -50,25 +47,21 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
     const handleImageClick = (currentImageId) => {
       if(location.pathname.toLowerCase() === "/3dgallery"){
       const selectedImage = get3DPreset.find(p => p.id === currentImageId);
-      console.log('Selected preset id is: ' + currentImageId);
 
         if(selectedImage){
           setmodalImagePresetIndex(get3DPreset.indexOf(selectedImage));
           setmodalImageIndex(0);
           setModalImage(selectedImage.images[0]);
-          console.log('modal is ' + modalImage);
         };
       };
 
       if(location.pathname.toLowerCase() === "/2dgallery"){
           const selectedImage = get2DPreset.find(p => p.id === currentImageId);
-      console.log('Selected preset id is: ' + currentImageId);
 
         if(selectedImage){
           setmodalImagePresetIndex(get2DPreset.indexOf(selectedImage));
           setmodalImageIndex(0);
           setModalImage(selectedImage.images[0]);
-          console.log('modal is ' + modalImage);
         };
       }
     }
@@ -121,14 +114,6 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
     // Maps the images from the preset into <image><image> components
   const displayingImages = [];
   
-  // for (let i = 0; i < presetToDisplay.length; i++) {
-	// 	displayingImages.push(
-	// 		<img className="galleryDisplayImages" key={i} src={presetToDisplay[i]}
-  //     onClick={() => handleImageClick(get3DPreset[i].id)}></img>
-	// 	);
-	// }
-
-
   for (let i = 0; i < presetToDisplay.length; i++) {
     if(location.pathname.toLowerCase() === "/3dgallery"){
     displayingImages.push(
@@ -142,6 +127,37 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
     );
   }
 };
+
+
+//Stores the array of images to be displayed below the modal image
+const modalPreviewImages = [];
+
+// 3D - For Loop to iterate through every image in the selected object.image[index]
+// else statement for 'environments' since there is only one image, so the for loop will not be triggered.  
+    if(location.pathname.toLowerCase() === "/3dgallery"){
+      if(get3DPreset[modalImagePresetIndex].images.length > 1){
+        for(let j = 0; j < get3DPreset[modalImagePresetIndex].images.length; j++){
+          modalPreviewImages.push(
+            <img className='modalImagePreviewImages' key={j} src={get3DPreset[modalImagePresetIndex].images[j]}></img>
+          )
+        }
+      } else {
+        modalPreviewImages.push(
+          <img className='modalImagePreviewImages' key={0} src={get3DPreset[modalImagePresetIndex].images[0]}></img>
+        )
+      }
+
+  } 
+
+// 2D - Just need to display one so it's always the same
+    if(location.pathname.toLowerCase() === "/2dgallery"){
+      modalPreviewImages.push(
+        <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}></img>
+      )
+    }
+
+
+
     
   return (
     <>
@@ -162,7 +178,22 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
       {modalImage && (
         <>
         <div className="modalImageContainer" onClick={handleImageExit}>
-        <img className='modalImage' src={modalImage} alt=""/>
+
+          {/* Conditional text depending on which page it is */}
+            <div className="modalImageText">
+            {location.pathname.toLowerCase() === "/3dgallery" && 
+                <p>{get3DPreset[modalImagePresetIndex].name} Renders</p>
+            }      
+
+            {location.pathname.toLowerCase() === "/2dgallery" && 
+                <p>{get2DPreset[modalImagePresetIndex].name} Renders</p>
+            }   
+            </div>
+          <img className='modalImage' src={modalImage} alt=""/>
+          <div className="modalImagePreview">
+            {modalPreviewImages}
+            <p className="modalImageText">{modalImageIndex+1}/{modalPreviewImages.length}</p>
+          </div>
         </div>
         </>
       )}
