@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import '../../../index.css'
 import './MainPage.css'
 import { Link } from "react-router-dom";
@@ -9,6 +9,19 @@ function MainPage() {
 
   //a useState to track which button is being hovered, so text hover can appear
   const [backgroundImage, setBackgroundImage] = useState(null);
+
+  function debounce(func, delay) {
+    let timer;
+    return function(...args) {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+  const handleBgImg = useCallback(
+    debounce((image) => {setBackgroundImage(image);},500),[]);
 
   return (
     <>
@@ -29,15 +42,10 @@ function MainPage() {
               <Link to="/2DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/2DFont.svg"
-                    onMouseEnter={()=> setBackgroundImage('2DFadeIn')}
+                    onMouseEnter={()=> handleBgImg('2DFadeIn')}
                     onMouseLeave={()=> {
-                      setBackgroundImage('2DFadeOut'); 
+                      handleBgImg('2DFadeOut'); 
                       console.log("leaving 2d");
-
-                      setTimeout(()=> {
-                        setBackgroundImage('Gradient');
-                      }, 500);
-                      
                     }}/>
                 </button>
               </Link>
@@ -45,29 +53,23 @@ function MainPage() {
               <Link to="/3DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/3DFont.svg"
-                    onMouseEnter={()=> setBackgroundImage('3DFadeIn')}
+                    onMouseEnter={()=> handleBgImg('3DFadeIn')}
                     onMouseLeave={()=> {
-                      setBackgroundImage('3DFadeOut');  
+                      handleBgImg('3DFadeOut');  
                       console.log("leaving 3d");
-
-                      setTimeout(()=> {
-                        setBackgroundImage('Gradient');
-                      }, 500);
-
                     }}/>
                 </button>
               </Link>
 
           </div>
 
-          {backgroundImage === '2D' && 
-
+          {backgroundImage === '2DFadeIn' && 
           <div className="hoverTextDiv">
               <p className="hoverText">Illustrations, Concept Design (Character, Creature + Assets), Animation</p>
           </div>
           }
 
-          {backgroundImage === '3D' && 
+          {backgroundImage === '3DFadeIn' && 
           <div className="hoverTextDiv">
               <p className="hoverText">Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx</p>
           </div>

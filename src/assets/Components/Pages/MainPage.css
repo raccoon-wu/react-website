@@ -33,7 +33,7 @@
   width: auto;
   height:100%;
   opacity:0;
-  animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.4s ease-in forwards;
   float:left;
   }
 
@@ -41,7 +41,7 @@
   width: auto;
   height:100%;
   opacity:0;
-  animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.4s ease-in forwards;
   float:right;
 }
 
@@ -49,7 +49,7 @@
   width: auto;
   height:100%;
   opacity:0;
-  animation: fadeOut 0.5s ease-out forwards;
+  animation: fadeOut 0.4s ease-out forwards;
   float:left;
   }
 
@@ -57,18 +57,8 @@
   width: auto;
   height:100%;
   opacity:0;
-  animation: fadeOut 0.5s ease-out forwards;
+  animation: fadeOut 0.4s ease-out forwards;
   float:right;
-}
-
-
-/* Animation for fading out */
-.backgroundImageLeft.fade-out {
-  animation: fadeOut 0.5s ease-out forwards;
-}
-
-.backgroundImageRight.fade-out {
-  animation: fadeOut 0.5s ease-out forwards;
 }
 
 .mainPageReposition{

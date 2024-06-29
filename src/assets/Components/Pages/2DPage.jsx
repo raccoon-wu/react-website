@@ -8,7 +8,6 @@ function Page2D({set2DPreset, get2DPreset}){
   return (
     <>
         <Renderer set2DPreset={set2DPreset} get2DPreset={get2DPreset}></Renderer>
-        <Link to="/"><button>Home</button></Link>
     </>
   );
 }

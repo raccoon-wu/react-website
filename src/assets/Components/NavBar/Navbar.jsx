@@ -5,34 +5,55 @@ import './Navbar.css'
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../../3DGalleryRenders/3DPresets.js';
 import { presetsOf2DMinions, presetsOf2DCharacters } from '../../2DGalleryRenders/2DPresets.js';
 import moreIcon from '../../Images/Icons/moreIcon.svg';
+import backButton from '../../Images/Icons/home_icon.png';
+
 const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
   const location = useLocation();
 
   return (
     <>
     <div className='navBarFlexBox'>
-      <div className='navBarLeftButton'><img className='navBarLeftImage' src={moreIcon}/></div>
+        <div className='navBarLeftButton'>
+          {location.pathname.toLowerCase() === "/" && 
+            <img className='navBarLeftImage' src={moreIcon}/>
+          }
+
+          {location.pathname.toLowerCase() === "/2dgallery" && 
+            <Link to="/"><img className='navBarLeftImage' src={backButton}/></Link>
+          }
+
+          {location.pathname.toLowerCase() === "/3dgallery" && 
+            <Link to="/"><img className='navBarLeftImage' src={backButton}/></Link>
+          }
+        </div>
+        
+
       <div className='navBarDiv'>
       
       {/* For Main page */}
-          {location.pathname.toLowerCase() === "/" && 
-            <p className='NavBarTextFrontPage'>AMY YI WU</p>
-          }
+      {location.pathname.toLowerCase() === "/" && 
+      <p className='NavBarTextFrontPage'>AMY YI WU</p>
+      }
           
       {/* For 3D page */}
+      {/* className = { x === y ? a : '' } sets up conditional rendering for className, it only triggers 'a' if it is true otherwise is empty*/}
       {location.pathname.toLowerCase() === "/3dgallery" && 
       <>
-            <button onClick={()=>set3DPreset(presetsOf3DCharacters)}>Characters</button>
-            <button onClick={()=>set3DPreset(presetOf3DObjects)}>Objects</button>
-            <button onClick={()=>set3DPreset(presetOf3DEnvironments)}>Environments</button>
+        <div className='galleryOptionsDiv'>
+            <button className={get3DPreset === presetsOf3DCharacters ? 'selectHighlight' : ''} onClick={()=>set3DPreset(presetsOf3DCharacters)}>Characters</button>
+            <button className={get3DPreset === presetOf3DObjects ? 'selectHighlight' : ''}  onClick={()=>set3DPreset(presetOf3DObjects)}>Objects</button>
+            <button className={get3DPreset === presetOf3DEnvironments ? 'selectHighlight' : ''}   onClick={()=>set3DPreset(presetOf3DEnvironments)}>Environments</button>
+        </div>
       </>
       }      
 
       {/* For 2D page */}
       {location.pathname.toLowerCase() === "/2dgallery" && 
       <>
-            <button onClick={()=>set2DPreset(presetsOf2DCharacters)}>Characters</button>
-            <button onClick={()=>set2DPreset(presetsOf2DMinions)}>Creatures</button>
+        <div className='galleryOptionsDiv'>
+            <button className={get2DPreset === presetsOf2DCharacters ? 'selectHighlight' : ''} onClick={()=>set2DPreset(presetsOf2DCharacters)}>Characters</button>
+            <button className={get2DPreset === presetsOf2DMinions ? 'selectHighlight' : ''} onClick={()=>set2DPreset(presetsOf2DMinions)}>Creatures</button>
+        </div>
       </>
       }
       </div>

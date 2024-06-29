@@ -161,19 +161,8 @@ const modalPreviewImages = [];
     
   return (
     <>
-      {location.pathname.toLowerCase() === "/3dgallery" && 
-      <>
-            <p>Page is 3D now</p>
-            <div className="galleryDisplayDiv">{displayingImages}</div>
-      </>
-      }      
 
-      {location.pathname.toLowerCase() === "/2dgallery" && 
-      <>
-            <p>Page is 222222D now</p>
-            <div className="galleryDisplayDiv">{displayingImages}</div>
-      </>
-      }     
+            <div className="galleryDisplayDiv">{displayingImages}</div>   
 
       {modalImage && (
         <>

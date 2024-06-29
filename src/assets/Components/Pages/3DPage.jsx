@@ -9,7 +9,6 @@ const Page3D = ({get3DPreset, set3DPreset}) => {
   return (
     <>
         <Renderer get3DPreset={get3DPreset}></Renderer>
-        <Link to="/"><button>Home</button></Link>
     </>
   );
 }
