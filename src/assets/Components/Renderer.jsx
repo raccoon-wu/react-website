@@ -143,7 +143,7 @@ const modalPreviewImages = [];
       if(get3DPreset[modalImagePresetIndex].images.length > 1){
         for(let j = 0; j < get3DPreset[modalImagePresetIndex].images.length; j++){
           modalPreviewImages.push(
-            <img className='modalImagePreviewImages' key={j} src={get3DPreset[modalImagePresetIndex].images[j]}></img>
+            <img className={ j === modalImageIndex ? 'modalImagePreviewImages' : 'modalImagePreviewImagesDARK' } key={j} src={get3DPreset[modalImagePresetIndex].images[j]}></img>
           )
         }
       } else {
@@ -161,7 +161,7 @@ const modalPreviewImages = [];
       )
     }
 
-//function for conditionally rendering
+//function for conditionally rendering an hero image only for the following presets
     const heroImage = [];
           if (get3DPreset === presetsOf3DCharacters){
               heroImage.push( <img className='heroDisplayImage' src={Cover3DWide}/>)
@@ -169,10 +169,36 @@ const modalPreviewImages = [];
           if (get2DPreset === presetsOf2DCharacters){
               heroImage.push( <img className='heroDisplayImage' src={Cover2DWide}/>)
           }
-  
-          console.log(modalPreviewImages[1]);
     
-    const
+//function for conditionally rendering text depending on which preset is chosen and which preset is chosen
+    let modalText = " ";
+          if (location.pathname.toLowerCase() === "/3dgallery"){
+              if(get3DPreset === presetsOf3DCharacters){
+                if(modalImageIndex === 0){modalText = get3DPreset[modalImagePresetIndex].name + " Reskinned Render";}
+                if(modalImageIndex === 1){modalText = get3DPreset[modalImagePresetIndex].name + " Original Design";}
+                if(modalImageIndex === 2){modalText = get3DPreset[modalImagePresetIndex].name + " Turnaround";}
+                if(modalImageIndex === 3){modalText = get3DPreset[modalImagePresetIndex].name + " Wireframe";}
+              }
+              if(get3DPreset === presetOf3DObjects){
+                  if(get3DPreset[modalImagePresetIndex].images.length === 4){
+                if(modalImageIndex === 0){modalText = get3DPreset[modalImagePresetIndex].name + " Variation #1";}
+                if(modalImageIndex === 1){modalText = get3DPreset[modalImagePresetIndex].name + " Variation #2";}
+                if(modalImageIndex === 2){modalText = get3DPreset[modalImagePresetIndex].name + " Variation #3";}
+                if(modalImageIndex === 3){modalText = get3DPreset[modalImagePresetIndex].name + " Wireframe";}
+              } else {
+                if(modalImageIndex === 0){modalText = get3DPreset[modalImagePresetIndex].name + " Variation #1";}
+                if(modalImageIndex === 1){modalText = get3DPreset[modalImagePresetIndex].name + " Wireframe";}
+              }
+              }
+              if(get3DPreset === presetOf3DEnvironments){
+                modalText = get3DPreset[modalImagePresetIndex].name + " Render";
+              }
+          }
+
+          if (location.pathname.toLowerCase() === "/2dgallery"){
+              modalText = get2DPreset[modalImagePresetIndex].name + " Illustration";
+          }
+
   return (
     <>
         <div className="mainFlexBox">
@@ -186,15 +212,9 @@ const modalPreviewImages = [];
         <>
         <div className="modalImageContainer" onClick={handleImageExit}>
             <div className="modalImageFlex">
-              {/* Conditional text depending on which page it is */}
+              {/* Conditional text that changes depending on the image*/}
                 <div className="modalImageText">
-                {location.pathname.toLowerCase() === "/3dgallery" && 
-                    <p>{get3DPreset[modalImagePresetIndex].name} Renders</p>
-                }      
-
-                {location.pathname.toLowerCase() === "/2dgallery" && 
-                    <p>{get2DPreset[modalImagePresetIndex].name} Renders</p>
-                }   
+                  <p>{modalText}</p>
                 </div>
               <img className='modalImage' src={modalImage} alt=""/>
                   <div className="modalImagePreview">

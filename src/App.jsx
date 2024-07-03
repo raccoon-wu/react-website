@@ -36,7 +36,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/2DGallery" element={<Gallery2D set2DPreset={set2DPreset} get2DPreset={get2DPreset} ></Gallery2D>} />
+        <Route path="/2DGallery" element={<Gallery2D set2DPreset={set2DPreset} get2DPreset={get2DPreset}></Gallery2D>} />
         <Route path="/3DGallery" element={<Gallery3D set3DPreset={set3DPreset} get3DPreset={get3DPreset}></Gallery3D>} />
       </Routes>
     </Router>
