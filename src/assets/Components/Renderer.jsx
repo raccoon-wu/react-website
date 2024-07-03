@@ -71,6 +71,8 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
 
     const handleImageExit = () => {
           setModalImage(null);
+          setmodalImageIndex(0);
+          setmodalImagePresetIndex(0);
     }
 
     useEffect(()=> {
@@ -168,7 +170,9 @@ const modalPreviewImages = [];
               heroImage.push( <img className='heroDisplayImage' src={Cover2DWide}/>)
           }
   
+          console.log(modalPreviewImages[1]);
     
+    const
   return (
     <>
         <div className="mainFlexBox">
@@ -181,24 +185,24 @@ const modalPreviewImages = [];
       {modalImage && (
         <>
         <div className="modalImageContainer" onClick={handleImageExit}>
+            <div className="modalImageFlex">
+              {/* Conditional text depending on which page it is */}
+                <div className="modalImageText">
+                {location.pathname.toLowerCase() === "/3dgallery" && 
+                    <p>{get3DPreset[modalImagePresetIndex].name} Renders</p>
+                }      
 
-        <div className="modalImageFlex">
-          {/* Conditional text depending on which page it is */}
-            <div className="modalImageText">
-            {location.pathname.toLowerCase() === "/3dgallery" && 
-                <p>{get3DPreset[modalImagePresetIndex].name} Renders</p>
-            }      
-
-            {location.pathname.toLowerCase() === "/2dgallery" && 
-                <p>{get2DPreset[modalImagePresetIndex].name} Renders</p>
-            }   
-            </div>
-          <img className='modalImage' src={modalImage} alt=""/>
-          <div className="modalImagePreview">
-            {modalPreviewImages}
-            <p className="modalImageText">{modalImageIndex+1}/{modalPreviewImages.length}</p>
-          </div>
-          </div>
+                {location.pathname.toLowerCase() === "/2dgallery" && 
+                    <p>{get2DPreset[modalImagePresetIndex].name} Renders</p>
+                }   
+                </div>
+              <img className='modalImage' src={modalImage} alt=""/>
+                  <div className="modalImagePreview">
+                    {modalPreviewImages}
+                    
+                  </div>
+                  <p className="modalImageNumber">{modalImageIndex+1}/{modalPreviewImages.length}</p>
+              </div>
         </div>
         </>
       )}
