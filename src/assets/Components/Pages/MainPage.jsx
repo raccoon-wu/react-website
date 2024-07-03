@@ -10,29 +10,16 @@ function MainPage() {
   //a useState to track which button is being hovered, so text hover can appear
   const [backgroundImage, setBackgroundImage] = useState(null);
 
-  function debounce(func, delay) {
-    let timer;
-    return function(...args) {
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
-    };
-  }
-
-  const handleBgImg = useCallback(
-    debounce((image) => {setBackgroundImage(image);},500),[]);
-
   return (
     <>
       <div className="mainPageFlexbox">
 
       {/* Hovering over buttons changes background image */}
       <div className="backgroundImageDiv">
-        {backgroundImage === '2DFadeIn' && <img className="backgroundImageLeftFadeIn" src={cover2D}/>}
-        {backgroundImage === '3DFadeIn' && <img className="backgroundImageRightFadeIn" src={cover3D}/>}
-        {backgroundImage === '2DFadeOut' && <img className="backgroundImageLeftFadeOut" src={cover2D}/>}
-        {backgroundImage === '3DFadeOut' && <img className="backgroundImageRightFadeOut" src={cover3D}/>}
+      {/* Conditional classnames to change opacity, depending on the buttons state*/}
+        <img className={backgroundImage === '2D' ? 'backgroundImageLBright':'backgroundImageL'} src={cover2D}/>
+        <img className={backgroundImage === '3D' ? 'backgroundImageRBright':'backgroundImageR'} src={cover3D}/>
+
 
       </div>
 
@@ -42,10 +29,11 @@ function MainPage() {
               <Link to="/2DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/2DFont.svg"
-                    onMouseEnter={()=> handleBgImg('2DFadeIn')}
+                    onMouseEnter={()=> {
+                      setBackgroundImage('2D');
+                    }}
                     onMouseLeave={()=> {
-                      handleBgImg('2DFadeOut'); 
-                      console.log("leaving 2d");
+                      setBackgroundImage('');
                     }}/>
                 </button>
               </Link>
@@ -53,23 +41,24 @@ function MainPage() {
               <Link to="/3DGallery">
                 <button className="mainPageButton">
                     <img className="mainButtonImage" src="src/assets/Images/3DFont.svg"
-                    onMouseEnter={()=> handleBgImg('3DFadeIn')}
+                    onMouseEnter={()=> {
+                      setBackgroundImage('3D');
+                    }}
                     onMouseLeave={()=> {
-                      handleBgImg('3DFadeOut');  
-                      console.log("leaving 3d");
+                      setBackgroundImage('');
                     }}/>
                 </button>
               </Link>
 
           </div>
 
-          {backgroundImage === '2DFadeIn' && 
+          {backgroundImage === '2D' && 
           <div className="hoverTextDiv">
               <p className="hoverText">Illustrations, Concept Design (Character, Creature + Assets), Animation</p>
           </div>
           }
 
-          {backgroundImage === '3DFadeIn' && 
+          {backgroundImage === '3D' && 
           <div className="hoverTextDiv">
               <p className="hoverText">Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx</p>
           </div>

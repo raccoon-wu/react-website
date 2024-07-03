@@ -1,13 +1,3 @@
-@keyframes fadeIn {
-  from{ opacity: 0;}
-  to {opacity: 0.5;}
-}
-
-@keyframes fadeOut{
-  from{ opacity: 0.5;}
-  to {opacity: 0;}
-}
-
 .backgroundGradient{
   width: 100vw;
   height: calc(100vh - 80px);
@@ -23,42 +13,11 @@
 }
 
 .backgroundImageDiv{
+  position: relative;
   width: 100vw;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 80px);
   z-index: -1;
   overflow: hidden;
-}
-
-.backgroundImageLeftFadeIn{
-  width: auto;
-  height:100%;
-  opacity:0;
-  animation: fadeIn 0.4s ease-in forwards;
-  float:left;
-  }
-
-.backgroundImageRightFadeIn{
-  width: auto;
-  height:100%;
-  opacity:0;
-  animation: fadeIn 0.4s ease-in forwards;
-  float:right;
-}
-
-.backgroundImageLeftFadeOut{
-  width: auto;
-  height:100%;
-  opacity:0;
-  animation: fadeOut 0.4s ease-out forwards;
-  float:left;
-  }
-
-.backgroundImageRightFadeOut{
-  width: auto;
-  height:100%;
-  opacity:0;
-  animation: fadeOut 0.4s ease-out forwards;
-  float:right;
 }
 
 .mainPageReposition{
@@ -109,6 +68,40 @@
   font-size: 22px;
   color: #dbdbff;
 }
+
+.backgroundImageL{
+  position: absolute;
+  width: auto;
+  height:100%;
+  float:left;
+  opacity: 0.4;
+  transition: 0.5s ease-in;
+}
+.backgroundImageLBright{
+  position: absolute;
+  width: auto;
+  height:100%;
+  float:left;
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
+.backgroundImageR{
+  width: auto;
+  height:100%;
+  float:right;
+  opacity: 0.4;
+  transition: 0.5s ease-in;
+}
+.backgroundImageRBright{
+  width: auto;
+  height:100%;
+  float:right;
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
+
 /* @font-face {
     font-family: 'Tw Italic';
     src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');

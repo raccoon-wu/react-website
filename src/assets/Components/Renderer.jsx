@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useLocation} from 'react-router-dom';
 import './Renderer.css'
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../3DGalleryRenders/3DPresets.js';
+import { presetsOf2DMinions, presetsOf2DCharacters } from '../2DGalleryRenders/2DPresets.js';
+import Cover2DWide from '../Images/2DCoverWide.png';
+import Cover3DWide from '../Images/3DCoverWide.png';
 
 function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
 
@@ -156,18 +159,30 @@ const modalPreviewImages = [];
       )
     }
 
-
-
+//function for conditionally rendering
+    const heroImage = [];
+          if (get3DPreset === presetsOf3DCharacters){
+              heroImage.push( <img className='heroDisplayImage' src={Cover3DWide}/>)
+          }
+          if (get2DPreset === presetsOf2DCharacters){
+              heroImage.push( <img className='heroDisplayImage' src={Cover2DWide}/>)
+          }
+  
     
   return (
     <>
-
-            <div className="galleryDisplayDiv">{displayingImages}</div>   
+        <div className="mainFlexBox">
+              <div className="heroDisplayDiv">
+                {heroImage}
+              </div>
+              <div className="galleryDisplayDiv">{displayingImages}</div>   
+        </div>
 
       {modalImage && (
         <>
         <div className="modalImageContainer" onClick={handleImageExit}>
 
+        <div className="modalImageFlex">
           {/* Conditional text depending on which page it is */}
             <div className="modalImageText">
             {location.pathname.toLowerCase() === "/3dgallery" && 
@@ -182,6 +197,7 @@ const modalPreviewImages = [];
           <div className="modalImagePreview">
             {modalPreviewImages}
             <p className="modalImageText">{modalImageIndex+1}/{modalPreviewImages.length}</p>
+          </div>
           </div>
         </div>
         </>

@@ -1,11 +1,44 @@
+.mainFlexBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    left:50%;
+}
+
 .galleryDisplayDiv{
-    height:500px;
-    background-color: rgb(17, 99, 32);
-    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    max-width:50%;
+    height: auto;
 }
 
 .galleryDisplayImages{
-    width:200px;
+    margin-top: 10px;
+    width:48%;
+    height: auto;
+    border-radius: 2%;
+}
+
+.galleryDisplayImages:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #ffffffdc;
+    transition: 0.5s ease;
+}
+
+.heroDisplayDiv{
+    max-width:48.8%;
+    height: auto;
+}
+
+.heroDisplayImage{
+    margin-top: 10px;
+    width: 100%;
+    height:auto;
+    border-radius: 2%;
 }
 
 .modalImageContainer{
@@ -13,12 +46,15 @@
     height:100%;
     width: 100%;
     z-index: 1;
-    top: 50%; /* Place the modal image 50% from the top of the viewport */
-    left: 50%; /* Place the modal image 50% from the left of the viewport */
-    transform: translate(-50%, -50%); /* Center the modal image horizontally and vertically */
     background-color: rgba(27, 27, 27, 0.9);
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+
+    justify-content: center; 
+    align-items: center; 
+    
 }
 
 .modalImage{
@@ -41,6 +77,7 @@
 
 .modalImagePreview{
     height:50px;
+    bottom:0px;
     background-color: aqua;
 }
 
@@ -48,3 +85,4 @@
     bottom:0;
     height:100px;
 }
+
