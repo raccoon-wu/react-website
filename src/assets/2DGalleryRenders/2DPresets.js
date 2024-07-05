@@ -16,4 +16,6 @@ export const presetsOf2DCharacters = [
 { id: 'C4', name: 'Battle Bunny Miss Fortune', images: [Char.C_4] },
 { id: 'C5', name: 'Triad Leader', images: [Char.C_5] },
 { id: 'C6', name: 'Triad Thug', images: [Char.C_6] },
+{ id: 'C7', name: 'Bewitching Janna & Miss Fortune', images: [Char.C_7] },
+{ id: 'C8', name: 'Cosmic & Dark Star Lux', images: [Char.C_8] },
 ]

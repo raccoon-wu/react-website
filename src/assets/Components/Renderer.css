@@ -72,10 +72,23 @@
     align-items: center; /* centers vertically */
  }
 
+.modalImageClose{
+    position:fixed;
+    height:40px;
+    right:30px;
+    top:20px;
+    z-index:10;
+ }
+
+.modalImageClose:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.3s ease;
+}
+
 .modalImage{
     height:70vh;
     z-index: 2;
-    transition: 0.2s;
 }
 
 .modalImageText{
@@ -111,9 +124,38 @@
 
 .modalImagePreviewImagesDARK{
     bottom:0;
-    height:80px;
+    height:70px;
     margin:3px;
     filter:brightness(0.3);
     transition: 0.4s;
 }
 
+.arrowsContainer{
+    position:fixed;
+    height:70px;
+    width:100vw;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftArrowImage{
+    position: fixed;
+    left:5%;
+    height: 60px;
+}
+
+.rightArrowImage{
+    position: fixed;
+    right:5%;
+    height:60px;
+}
+
+.leftArrowImage:hover,.rightArrowImage:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+    transition: 0.5s ease;
+}

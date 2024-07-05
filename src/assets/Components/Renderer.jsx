@@ -5,6 +5,9 @@ import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from
 import { presetsOf2DMinions, presetsOf2DCharacters } from '../2DGalleryRenders/2DPresets.js';
 import Cover2DWide from '../Images/2DCoverWide.png';
 import Cover3DWide from '../Images/3DCoverWide.png';
+import arrowLeft from '../Images/Icons/arrow_left.png';
+import arrowRight from '../Images/Icons/arrow_right.png';
+import closeCross from '../Images/Icons/closeCross.png';
 
 function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
 
@@ -35,7 +38,7 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
         } else if (get3DPreset === presetOf3DObjects){
           setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images[0]).flat() : []);
         } else if (get3DPreset === presetOf3DEnvironments){
-          setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images).flat() : []);
+          setPresetToDisplay(Array.isArray(get3DPreset) ? get3DPreset.map(preset => preset.images[0]).flat() : []);
         }
        
       } else if (location.pathname.toLowerCase() === "/2dgallery") {
@@ -199,6 +202,56 @@ const modalPreviewImages = [];
               modalText = get2DPreset[modalImagePresetIndex].name + " Illustration";
           }
 
+          console.log('preset is: '+modalImagePresetIndex);
+          console.log('image index is: '+modalImageIndex);
+
+//Setting up arrow keys for modal image for more visual clarity
+          const leftArrowClick = () => {
+            setmodalImageIndex(prevIndex => {
+              const newIndex = prevIndex === 0 ? prevIndex : prevIndex - 1;
+              if(location.pathname.toLowerCase() === "/3dgallery"){
+              setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
+
+              } else if(location.pathname.toLowerCase() === "/2dgallery"){
+              setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
+              }
+              return newIndex;
+              // const newIndex = prevIndex === 0 ? prevIndex : prevIndex - 1;
+              // if(location.pathname.toLowerCase() === "/3dgallery"){
+              // setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
+              // setmodalImageIndex(newIndex);
+              // } else if(location.pathname.toLowerCase() === "/2dgallery"){
+              // setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
+              // setmodalImageIndex(newIndex);
+              // }
+              // return newIndex;
+
+            });
+          }
+
+          const rightArrowClick = () => {
+            setmodalImageIndex( prevIndex => {
+              if(location.pathname.toLowerCase() === "/3dgallery"){
+                const newIndex = prevIndex === get3DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
+              setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
+              return newIndex;
+              } else if(location.pathname.toLowerCase() === "/2dgallery"){
+                const newIndex = prevIndex === get2DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
+              setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
+              return newIndex;
+              }
+              // if(location.pathname.toLowerCase() === "/3dgallery"){
+              //   const newIndex = prevIndex === get3DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
+              // setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
+              // return newIndex;
+              // } else if(location.pathname.toLowerCase() === "/2dgallery"){
+              //   const newIndex = prevIndex === get2DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
+              // setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
+              // return newIndex;
+              // }
+        });
+          }
+
   return (
     <>
         <div className="mainFlexBox">
@@ -210,7 +263,8 @@ const modalPreviewImages = [];
 
       {modalImage && (
         <>
-        <div className="modalImageContainer" onClick={handleImageExit}>
+        <div className="modalImageContainer">
+          <img className='modalImageClose' src={closeCross} onClick={handleImageExit}/>
             <div className="modalImageFlex">
               {/* Conditional text that changes depending on the image*/}
                 <div className="modalImageText">
@@ -219,9 +273,16 @@ const modalPreviewImages = [];
               <img className='modalImage' src={modalImage} alt=""/>
                   <div className="modalImagePreview">
                     {modalPreviewImages}
-                    
                   </div>
                   <p className="modalImageNumber">{modalImageIndex+1}/{modalPreviewImages.length}</p>
+                  <div className="arrowsContainer">
+                    {modalImageIndex > 0 && 
+                    (<img onClick={leftArrowClick} className="leftArrowImage" src={arrowLeft}/>)}
+                    {modalImageIndex < modalPreviewImages.length-1 &&
+                    (<img onClick={rightArrowClick} className="rightArrowImage" src={arrowRight}/>)}
+
+                      
+                  </div>
               </div>
         </div>
         </>

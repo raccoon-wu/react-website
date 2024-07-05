@@ -40,9 +40,9 @@ const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
       {location.pathname.toLowerCase() === "/3dgallery" && 
       <>
         <div className='galleryOptionsDiv'>
-            <button className={get3DPreset === presetsOf3DCharacters ? 'selectHighlight' : ''} onClick={()=>set3DPreset(presetsOf3DCharacters)}>Characters</button>
-            <button className={get3DPreset === presetOf3DObjects ? 'selectHighlight' : ''}  onClick={()=>set3DPreset(presetOf3DObjects)}>Objects</button>
-            <button className={get3DPreset === presetOf3DEnvironments ? 'selectHighlight' : ''}   onClick={()=>set3DPreset(presetOf3DEnvironments)}>Environments</button>
+            <button className={get3DPreset === presetsOf3DCharacters ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set3DPreset(presetsOf3DCharacters)}>Characters</button>
+            <button className={get3DPreset === presetOf3DObjects ? 'selectHighlight' : 'buttonNavbar'}  onClick={()=>set3DPreset(presetOf3DObjects)}>Objects</button>
+            <button className={get3DPreset === presetOf3DEnvironments ? 'selectHighlight' : 'buttonNavbar'}   onClick={()=>set3DPreset(presetOf3DEnvironments)}>Environments</button>
         </div>
       </>
       }      
@@ -51,8 +51,8 @@ const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
       {location.pathname.toLowerCase() === "/2dgallery" && 
       <>
         <div className='galleryOptionsDiv'>
-            <button className={get2DPreset === presetsOf2DCharacters ? 'selectHighlight' : ''} onClick={()=>set2DPreset(presetsOf2DCharacters)}>Characters</button>
-            <button className={get2DPreset === presetsOf2DMinions ? 'selectHighlight' : ''} onClick={()=>set2DPreset(presetsOf2DMinions)}>Creatures</button>
+            <button className={get2DPreset === presetsOf2DCharacters ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set2DPreset(presetsOf2DCharacters)}>Characters</button>
+            <button className={get2DPreset === presetsOf2DMinions ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set2DPreset(presetsOf2DMinions)}>Creatures</button>
         </div>
       </>
       }
