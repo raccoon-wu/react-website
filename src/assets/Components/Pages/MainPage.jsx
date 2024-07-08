@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../../../index.css'; 
 import { Link } from "react-router-dom"; 
 import cover3D from "../../Images/3DCover.png"; 
-import cover2D from "../../Images/2DCover.png"; 
+import cover2D from "../../Images/2DCover.png";  
 import cover3D_mobile from '../../Images/Mobile3DCover.png'; 
 import cover2D_mobile from '../../Images/Mobile2DCover.png'; 
 import useWindowSize from './WindowSize.jsx';  
@@ -10,21 +10,27 @@ import './MainPage.css'
  
 function MainPage() { 
   const { width } = useWindowSize(); 
-  const isMobile = width <= 960; 
+  const isMobile = width <= 1000; 
  
   // a useState to track which button is being hovered, so text hover can appear 
   const [backgroundImage, setBackgroundImage] = useState(null); 
-  console.log(isMobile); 
   return ( 
     <> 
       {isMobile ? (  
         <> 
         <div className="mobileFlexBox">  
-          {/* <Link to="/2DGallery"><button className="mobileFrontButton"> */} 
-            <img className='mobileFrontImage' src={cover2D_mobile}/> 
-            {/* </button></Link> */} 
-          {/* <Link to="/3DGallery"><button className="mobileFrontButton"> */} 
-            <img className='mobileFrontImage' src={cover3D_mobile}/> 
+            <Link className='mobileLink' to="/2DGallery"><div className="mobileMainButtons2D">
+                <div className="mobileButtonsTextDiv">
+                  <p className="mobileButtonsTitle">2D GALLERY</p>
+                  <p className="mobileButtonsDescription">Illustrations, Concept Design (Character, Creature + Assets), Animation</p>
+                </div>
+              </div></Link>
+            <Link className='mobileLink' to="/3DGallery"><div className="mobileMainButtons3D">
+                <div className="mobileButtonsTextDiv">
+                    <p className="mobileButtonsTitle">3D GALLERY</p>
+                    <p className="mobileButtonsDescription">Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx</p>
+                </div>
+              </div></Link>
             {/* </button></Link> */} 
         </div> 
         </> 

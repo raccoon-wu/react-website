@@ -3,6 +3,11 @@
   src: url('src/assets/Fonts/Tw.ttf') format('truetype');
 } 
 
+@font-face {
+  font-family: 'Tw Italic';
+  src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');
+} 
+
 .backgroundGradient{
   width: 100vw;
   height: calc(100vh - 80px);
@@ -108,34 +113,95 @@
   transition: 0.5s ease-in;
 }
 
-@media only screen and (max-width: 1000px) {
-  .backgroundImageL{
+@media only screen and (max-width: 1500px) {
+  .backgroundImageL, .backgroundImageLBright{
     left:-100px;
   }
-  .backgroundImageLBright{
-    left:-100px;
-  }
-  .backgroundImageR{
-    right:-100px;
-  }
-  .backgroundImageRBright{
+  .backgroundImageR, .backgroundImageRBright{
     right:-100px;
   }
   }
 
+  @media only screen and (max-width: 1200px) {
+    .backgroundImageL, .backgroundImageLBright{
+      left:-200px;
+    }
+    .backgroundImageR, .backgroundImageRBright{
+      right:-200px;
+    }
+    }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 1000px) {
     .mobileFlexBox{
       position: relative;
       display: flex;
       flex-direction: column;
-      width: 480px;
-      height:100%;
+      width: 100vw;
+      height:90vh;
       justify-content: center;
       align-items: center;
     }
 
-    .mobileFrontImage{
-      max-width:10%;
+    .mobileLink{
+      width: 100%;
+      height:100%;
+      text-decoration: none;
+    }
+
+    .mobileMainButtons2D,.mobileMainButtons3D{
+      position: relative;
+      margin:10px;
+      width:95%;
+      height:95%;
+      /* border: solid rgba(236, 224, 255, 0.7) 1.5px; */
+    }
+
+    .mobileMainButtons2D{
+      background: linear-gradient(rgba(15, 5, 68, 0.9), rgba(15, 5, 68, 0.5)), /* Gradient layer */
+      url('../../Images/Mobile2DCover.png'); /* Image layer */
+      background-position: center center; /* Centers the image */
+      background-size: cover; /* Adjust as necessary */
+      background-blend-mode: multiply; /* Optional: blend mode */
+    }
+
+    .mobileMainButtons3D{
+      background: linear-gradient(rgba(46, 5, 68, 0.9), rgba(46, 5, 68, 0.5)), /* Gradient layer */
+      url('../../Images/Mobile3DCover.png'); /* Image layer */
+      background-position: center center; /* Centers the image */
+      background-size: cover; /* Adjust as necessary */
+      background-blend-mode: multiply; /* Optional: blend mode */
+    }
+    
+    .mobileButtonsTextDiv{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobileButtonsTitle{
+      font-size: 65px;
+      color:#aaafff;
+      text-decoration: none;
+      margin:0;
+      padding:0;
+    }
+
+    .mobileButtonsDescription{
+      margin:0;
+      padding:0;
+      font-family: 'Tw Italic';
+      color: #dbdbff;
+      width: 65%;
+  
+    }
+  } 
+
+  @media only screen and (max-width: 333px) {
+    .mobileButtonsTitle{
+      font-size: 40px;
     }
   } 
