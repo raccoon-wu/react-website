@@ -14,9 +14,9 @@ const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
     <>
     <div className='navBarFlexBox'>
         <div className='navBarLeftButton'>
-          {location.pathname.toLowerCase() === "/" && 
+          {/* {location.pathname.toLowerCase() === "/" && 
             <img className='navBarLeftImage' src={moreIcon}/>
-          }
+          } */}
 
           {location.pathname.toLowerCase() === "/2dgallery" && 
             <Link to="/"><img className='navBarLeftImage' src={backButton}/></Link>

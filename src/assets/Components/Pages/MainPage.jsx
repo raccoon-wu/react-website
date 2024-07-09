@@ -5,7 +5,10 @@ import cover3D from "../../Images/3DCover.png";
 import cover2D from "../../Images/2DCover.png";  
 import cover3D_mobile from '../../Images/Mobile3DCover.png'; 
 import cover2D_mobile from '../../Images/Mobile2DCover.png'; 
-import useWindowSize from './WindowSize.jsx';  
+import useWindowSize from './WindowSize.jsx';
+import sparkle2D from '../../Images/2DSparkle.png';  
+import sparkle3D from '../../Images/3DSparkle.png';  
+
 import './MainPage.css' 
  
 function MainPage() { 
@@ -14,6 +17,7 @@ function MainPage() {
  
   // a useState to track which button is being hovered, so text hover can appear 
   const [backgroundImage, setBackgroundImage] = useState(null); 
+
   return ( 
     <> 
       {isMobile ? (  
@@ -39,8 +43,10 @@ function MainPage() {
           {/* Hovering over buttons changes background image */} 
           <div className="backgroundImageDiv"> 
             {/* Conditional classnames to change opacity, depending on the buttons state */} 
-            <img className={backgroundImage === '2D' ? 'backgroundImageLBright' : 'backgroundImageL'} src={cover2D} alt="2D Cover" /> 
-            <img className={backgroundImage === '3D' ? 'backgroundImageRBright' : 'backgroundImageR'} src={cover3D} alt="3D Cover" /> 
+            <img className={backgroundImage === '2D' ? 'backgroundImageLBright' : 'backgroundImageL'} src={cover2D}/>
+            <img className={backgroundImage === '2D' ? 'sparkle2D' : 'sparkle2DDim'} src={sparkle2D}/> 
+            <img className={backgroundImage === '3D' ? 'backgroundImageRBright' : 'backgroundImageR'} src={cover3D}/>
+            <img className={backgroundImage === '3D' ? 'sparkle3D' : 'sparkle3DDim'} src={sparkle3D}/>  
           </div> 
  
           <div className="mainPageReposition"> 

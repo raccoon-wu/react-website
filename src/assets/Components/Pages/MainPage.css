@@ -113,25 +113,82 @@
   transition: 0.5s ease-in;
 }
 
-@media only screen and (max-width: 1500px) {
-  .backgroundImageL, .backgroundImageLBright{
-    left:-100px;
-  }
-  .backgroundImageR, .backgroundImageRBright{
-    right:-100px;
-  }
+.sparkle2D{
+  position: fixed;
+  left:50%;
+  top:40%;
+  transform: translate(-50%, -50%);
+  width:680px;
+  z-index: 10;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.sparkle3D{
+  position: fixed;
+  left:50%;
+  top:52%;
+  transform: translate(-50%, -50%);
+  width:780px;
+  z-index: 10;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.sparkle3DDim{
+  opacity: 0;
+  width:100px;
+  z-index: 10;
+  position: fixed;
+  left:50%;
+  top:54%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+}
+
+.sparkle2DDim{
+  opacity: 0;
+  width:100px;
+  transition: 0.5s ease-in-out;
+  z-index: 10;
+  position: fixed;
+  left:50%;
+  top:40%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 1800px){
+  .sparkle2D{top:41%; width: 610px;}
+  .sparkle3D{top:53%; width: 700px;}
+}
+
+@media only screen and (max-width: 1600px) {
+  .backgroundImageL, .backgroundImageLBright{left:-100px; }
+  .backgroundImageR, .backgroundImageRBright{right:-100px;}
+
+  .sparkle2D{top:41%; width: 570px;}
+  .sparkle3D{top:52%; width: 650px;}
   }
 
-  @media only screen and (max-width: 1200px) {
-    .backgroundImageL, .backgroundImageLBright{
-      left:-200px;
-    }
-    .backgroundImageR, .backgroundImageRBright{
-      right:-200px;
-    }
+  @media only screen and (max-width: 1450px) {
+    .sparkle2D{   top:42%; width: 520px;}
+    .sparkle3D{  top: 53%; width: 590px;}
+  }
+
+@media only screen and (max-width: 1350px) {
+    .backgroundImageL, .backgroundImageLBright{left:-150px;}
+    .backgroundImageR, .backgroundImageRBright{right:-150px;}
+    .sparkle2D{   top:42%; width: 500px;}
+    .sparkle3D{  top:53%; width: 570px;}
     }
 
-  @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
+    .backgroundImageL, .backgroundImageLBright{left:-200px;}
+    .backgroundImageR, .backgroundImageRBright{right:-200px;}
+    .sparkle2D{   top:42%; width: 450px;}
+    .sparkle3D{  top:53%; width: 530px;}
+    }
+
+@media only screen and (max-width: 1000px) {
     .mobileFlexBox{
       position: relative;
       display: flex;
@@ -195,8 +252,8 @@
       padding:0;
       font-family: 'Tw Italic';
       color: #dbdbff;
-      width: 65%;
-  
+      width: 75%;
+      font-size: 20px;
     }
   } 
 

@@ -159,6 +159,51 @@
     transition: 0.5s ease;
 }
 
+@media only screen and (max-width: 1300px) {
+    .galleryDisplayDiv{
+        max-width:75%;
+    }
+    .heroDisplayDiv{
+        max-width: 73%;
+    }
+    .galleryDisplayImages{
+        margin-top: 5px;
+        width:48%;
+        height: auto;
+        border-radius: 2%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .galleryDisplayDiv{
+        max-width:85%;
+    }
+    .heroDisplayDiv{
+        max-width: 83%;
+    }
+    .galleryDisplayImages{
+        margin-top: 5px;
+        width:48%;
+        height: auto;
+        border-radius: 2%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .galleryDisplayDiv{
+        max-width:95%;
+    }
+    .heroDisplayDiv{
+        max-width: 93%;
+    }
+    .galleryDisplayImages{
+        margin-top: 5px;
+        width:48%;
+        height: auto;
+        border-radius: 2%;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     .galleryDisplayDiv{
         max-width:95%;
