@@ -13,6 +13,7 @@ import threeDFont from '../../../assets/Images/3DFont.svg'; // Import the SVG im
 
 import './MainPage.css' 
  
+//Very Cool Comment By Leon
 function MainPage() { 
   const { width } = useWindowSize(); 
   const isMobile = width <= 1000; 
