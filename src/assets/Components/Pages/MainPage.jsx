@@ -8,6 +8,8 @@ import cover2D_mobile from '../../Images/Mobile2DCover.png';
 import useWindowSize from './WindowSize.jsx';
 import sparkle2D from '../../Images/2DSparkle.png';  
 import sparkle3D from '../../Images/3DSparkle.png';  
+import twoDFont from '../../../assets/Images/2DFont.svg'; // Import the SVG image
+import threeDFont from '../../../assets/Images/3DFont.svg'; // Import the SVG image
 
 import './MainPage.css' 
  
@@ -55,7 +57,7 @@ function MainPage() {
                 <button className="mainPageButton"> 
                   <img 
                     className="mainButtonImage" 
-                    src="src/assets/Images/2DFont.svg" 
+                    src={twoDFont} 
                     alt="2D Gallery" 
                     onMouseEnter={() => { 
                       setBackgroundImage('2D'); 
@@ -71,7 +73,7 @@ function MainPage() {
                 <button className="mainPageButton"> 
                   <img 
                     className="mainButtonImage" 
-                    src="src/assets/Images/3DFont.svg" 
+                    src={threeDFont}
                     alt="3D Gallery" 
                     onMouseEnter={() => { 
                       setBackgroundImage('3D'); 

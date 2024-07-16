@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Tw Italic';
-    src: url('src/assets/Fonts/TwItalic.ttf') format('truetype');
+    src: url('../../../assets/Fonts/TwItalic.ttf') format('truetype');
   } 
   
 .navBarFlexBox{

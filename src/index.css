@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Tw Cen MT Condensed Extra Bold';
-  src: url('src/assets/Fonts/Tw.ttf') format('truetype');
+  src: url('./assets/Fonts/Tw.ttf') format('truetype');
 } 
 
 @font-face {
   font-family: 'Gabriola';
-  src: url('src/assets/Fonts/Gabriola.ttf') format('truetype');
+  src: url('./assets/Fonts/Gabriola.ttf') format('truetype');
 } 
 
 html, body {
