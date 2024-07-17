@@ -1,10 +1,9 @@
-import React , { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../../3DGalleryRenders/3DPresets.js';
 import { presetsOf2DMinions, presetsOf2DCharacters } from '../../2DGalleryRenders/2DPresets.js';
-import moreIcon from '../../Images/Icons/moreIcon.svg';
 import backButton from '../../Images/Icons/home_icon.png';
 
 const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
@@ -14,10 +13,6 @@ const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
     <>
     <div className='navBarFlexBox'>
         <div className='navBarLeftButton'>
-          {/* {location.pathname.toLowerCase() === "/" && 
-            <img className='navBarLeftImage' src={moreIcon}/>
-          } */}
-
           {location.pathname.toLowerCase() === "/2dgallery" && 
             <Link to="/"><img className='navBarLeftImage' src={backButton}/></Link>
           }
