@@ -213,8 +213,25 @@
     }
     .galleryDisplayImages{
         margin-top: 5px;
-        width:48%;
+        width:90%;
         height: auto;
         border-radius: 2%;
+    }
+
+    .modalImage {
+        max-width: 95vw;
+        height:auto;
+    }
+
+    .modalImageText {
+        text-align: center;
+        max-width: 70vw;
+        height:auto;
+    }
+
+    .arrowsContainer {
+        position: fixed;
+        top:90%;
+        /* background-color: aliceblue; */
     }
 }

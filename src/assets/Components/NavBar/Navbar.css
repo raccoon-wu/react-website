@@ -82,7 +82,7 @@
 
 @media only screen and (max-width: 1000px) {
     .navBarDiv{
-        height: 60px;
+        height: 80px;
         width: 90vw;
         display:flex;
         flex-direction: row;
@@ -117,7 +117,7 @@
 
     .NavBarTextFrontPage{
         margin-left: -20px; 
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .galleryOptionsDiv{
@@ -133,6 +133,6 @@
 @media only screen and (max-width: 520px) {
 
     .selectHighlight, .buttonNavbar{
-        font-size: 20px;
+        font-size: 25px;
     }
       }
