@@ -3,8 +3,6 @@ import '../../../index.css';
 import { Link } from "react-router-dom"; 
 import cover3D from "../../Images/3DCover.png"; 
 import cover2D from "../../Images/2DCover.png";  
-import cover3D_mobile from '../../Images/Mobile3DCover.png'; 
-import cover2D_mobile from '../../Images/Mobile2DCover.png'; 
 import useWindowSize from './WindowSize.jsx';
 import sparkle2D from '../../Images/2DSparkle.png';  
 import sparkle3D from '../../Images/3DSparkle.png';  
@@ -13,10 +11,9 @@ import threeDFont from '../../../assets/Images/3DFont.svg'; // Import the SVG im
 
 import './MainPage.css' 
  
-//Very Cool Comment By Leon
 function MainPage() { 
-  const { width } = useWindowSize(); 
-  const isMobile = width <= 1000; 
+  const { width } = useWindowSize();
+  const isMobile = width <= 480; 
  
   // a useState to track which button is being hovered, so text hover can appear 
   const [backgroundImage, setBackgroundImage] = useState(null); 
@@ -24,6 +21,7 @@ function MainPage() {
   return ( 
     <> 
       {isMobile ? (  
+        // Mobile Main Page
         <> 
         <div className="mobileFlexBox">  
             <Link className='mobileLink' to="/2DGallery"><div className="mobileMainButtons2D">
@@ -38,10 +36,10 @@ function MainPage() {
                     <p className="mobileButtonsDescription">Low Poly Modelling, High Poly Sculpting, Texture Painting, Animation + fx</p>
                 </div>
               </div></Link>
-            {/* </button></Link> */} 
         </div> 
         </> 
-      ) : ( 
+      ) : (
+        // Desktop Main Page
         <div className="mainPageFlexbox"> 
           {/* Hovering over buttons changes background image */} 
           <div className="backgroundImageDiv"> 

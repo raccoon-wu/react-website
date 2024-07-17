@@ -18,12 +18,6 @@ html, body {
   font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
   color: #aaaaff;
   background-color: #0d0b32;
-  /* background-image: url('./assets/Images/2DCover.png');
-
-  background-blend-mode: overlay;
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat; */
   width: 100%;
   height: 100%;
 }
