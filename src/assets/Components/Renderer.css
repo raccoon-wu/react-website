@@ -229,6 +229,20 @@
         height:auto;
     }
 
+    .modalImagePreview{
+        max-width: 80vw;
+        height:auto;
+    }
+
+    .modalImagePreviewImages{
+       height: 60px;
+       width: auto;
+    }
+
+    .modalImagePreviewImagesDARK{
+        height: 60px;
+        width: auto;
+     }
     .arrowsContainer {
         position: fixed;
         top:90%;
