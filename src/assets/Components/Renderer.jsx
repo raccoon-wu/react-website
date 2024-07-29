@@ -126,12 +126,12 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
     if(location.pathname.toLowerCase() === "/3dgallery"){
     displayingImages.push(
       <img className="galleryDisplayImages" key={i} src={presetToDisplay[i]}
-      onClick={() => handleImageClick(get3DPreset[i].id)}></img>
+      onClick={() => handleImageClick(get3DPreset[i].id)}  loading="lazy"></img>
     );
   } else if(location.pathname.toLowerCase() === "/2dgallery"){
     displayingImages.push(
-      <img className="galleryDisplayImages" key={i} src={presetToDisplay[i]}
-      onClick={() => handleImageClick(get2DPreset[i].id)}></img>
+      <img className="galleryDisplayImages" key={i} src={presetToDisplay[i] }
+      onClick={() => handleImageClick(get2DPreset[i].id)}  loading="lazy"></img>
     );
   }
 };
@@ -146,12 +146,12 @@ const modalPreviewImages = [];
       if(get3DPreset[modalImagePresetIndex].images.length > 1){
         for(let j = 0; j < get3DPreset[modalImagePresetIndex].images.length; j++){
           modalPreviewImages.push(
-            <img className={ j === modalImageIndex ? 'modalImagePreviewImages' : 'modalImagePreviewImagesDARK' } key={j} src={get3DPreset[modalImagePresetIndex].images[j]}></img>
+            <img className={ j === modalImageIndex ? 'modalImagePreviewImages' : 'modalImagePreviewImagesDARK' } key={j} src={get3DPreset[modalImagePresetIndex].images[j]}  loading="lazy"></img>
           )
         }
       } else {
         modalPreviewImages.push(
-          <img className='modalImagePreviewImages' key={0} src={get3DPreset[modalImagePresetIndex].images[0]}></img>
+          <img className='modalImagePreviewImages' key={0} src={get3DPreset[modalImagePresetIndex].images[0]}  loading="lazy"></img>
         )
       }
 
@@ -160,17 +160,17 @@ const modalPreviewImages = [];
 // 2D - Just need to display one so it's always the same
     if(location.pathname.toLowerCase() === "/2dgallery"){
       modalPreviewImages.push(
-        <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}></img>
+        <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}  loading="lazy"></img>
       )
     }
 
 //function for conditionally rendering an hero image only for the following presets
     const heroImage = [];
           if (get3DPreset === presetsOf3DCharacters){
-              heroImage.push( <img className='heroDisplayImage' src={Cover3DWide}/>)
+              heroImage.push( <img className='heroDisplayImage' src={Cover3DWide}  loading="lazy"/>)
           }
           if (get2DPreset === presetsOf2DCharacters){
-              heroImage.push( <img className='heroDisplayImage' src={Cover2DWide}/>)
+              heroImage.push( <img className='heroDisplayImage' src={Cover2DWide} loading="lazy"/>)
           }
     
 //function for conditionally rendering text depending on which preset is chosen and which preset is chosen
@@ -270,7 +270,7 @@ const modalPreviewImages = [];
                 <div className="modalImageText">
                   <p>{modalText}</p>
                 </div>
-              <img className='modalImage' src={modalImage} alt=""/>
+              <img className='modalImage' src={modalImage} alt=""  loading="lazy"/>
                   <div className="modalImagePreview">
                     {modalPreviewImages}
                   </div>
