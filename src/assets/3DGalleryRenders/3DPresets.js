@@ -93,6 +93,6 @@ export const presetOf3DObjects = [
 ];
 
 export const presetOf3DEnvironments = [
-    { id: 1, name: 'Frosted Cave', images: [Env3D.E_1], blur:[Env3D.E_1_blur.jpg] },
-    { id: 2, name: 'Toon Forest', images: [Env3D.E_2], blur:[Env3D.E_2_blur.jpg] }
+    { id: 1, name: 'Frosted Cave', images: [Env3D.E_1], blur:[Env3D.E_1_blur] },
+    { id: 2, name: 'Toon Forest', images: [Env3D.E_2], blur:[Env3D.E_2_blur] }
 ];

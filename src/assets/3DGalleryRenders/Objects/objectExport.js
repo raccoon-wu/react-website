@@ -28,30 +28,30 @@ export { default as Egg_W } from './Egg_W.webp';
 
 
 //Blur export
-export { default as C_1_blur } from './C_1_blur.webp';
-export { default as C_2_blur } from './C_2_blur.webp';
-export { default as C_3_blur } from './C_3_blur.webp';
-export { default as C_W_blur } from './C_W_blur.webp';
+export { default as C_1_blur } from './C_1_blur.jpg';
+export { default as C_2_blur } from './C_2_blur.jpg';
+export { default as C_3_blur } from './C_3_blur.jpg';
+export { default as C_W_blur } from './C_W_blur.jpg';
 
-export { default as E_1_blur } from './E_1_blur.webp';
-export { default as E_2_blur } from './E_2_blur.webp';
-export { default as E_3_blur } from './E_3_blur.webp';
-export { default as E_W_blur } from './E_W_blur.webp';
+export { default as E_1_blur } from './E_1_blur.jpg';
+export { default as E_2_blur } from './E_2_blur.jpg';
+export { default as E_3_blur } from './E_3_blur.jpg';
+export { default as E_W_blur } from './E_W_blur.jpg';
 
-export { default as J_1_blur } from './J_1_blur.webp';
-export { default as J_2_blur } from './J_2_blur.webp';
-export { default as J_3_blur } from './J_3_blur.webp';
-export { default as J_W_blur } from './J_W_blur.webp';
+export { default as J_1_blur } from './J_1_blur.jpg';
+export { default as J_2_blur } from './J_2_blur.jpg';
+export { default as J_3_blur } from './J_3_blur.jpg';
+export { default as J_W_blur } from './J_W_blur.jpg';
 
-export { default as S_1_blur } from './S_1_blur.webp';
-export { default as S_2_blur } from './S_2_blur.webp';
-export { default as S_3_blur } from './S_3_blur.webp';
-export { default as S_W_blur } from './S_W_blur.webp';
+export { default as S_1_blur } from './S_1_blur.jpg';
+export { default as S_2_blur } from './S_2_blur.jpg';
+export { default as S_3_blur } from './S_3_blur.jpg';
+export { default as S_W_blur } from './S_W_blur.jpg';
 
-export { default as T_1_blur } from './T_1_blur.webp';
-export { default as T_2_blur } from './T_2_blur.webp';
-export { default as T_3_blur } from './T_3_blur.webp';
-export { default as T_W_blur } from './T_W_blur.webp';
+export { default as T_1_blur } from './T_1_blur.jpg';
+export { default as T_2_blur } from './T_2_blur.jpg';
+export { default as T_3_blur } from './T_3_blur.jpg';
+export { default as T_W_blur } from './T_W_blur.jpg';
 
-export { default as Egg_1_blur } from './Egg_1_blur.webp';
-export { default as Egg_W_blur } from './Egg_W_blur.webp';
+export { default as Egg_1_blur } from './Egg_1_blur.jpg';
+export { default as Egg_W_blur } from './Egg_W_blur.jpg';
