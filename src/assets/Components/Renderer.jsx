@@ -14,9 +14,8 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
   // *** Checks location of the current page, is working
   const location = useLocation();
 
-
   // *** Array to store what to display currently so that there is only one at all time
-  const [presetToDisplay, setPresetToDisplay] = useState([]); // LEON: This variable needs to become a state, otherwise it won't update
+  const [presetToDisplay, setPresetToDisplay] = useState([]); 
   
   //Tracks selected object in the preset
   const [modalImagePresetIndex, setmodalImagePresetIndex] = useState(0);
@@ -251,6 +250,10 @@ const modalPreviewImages = [];
               // }
         });
           }
+
+          // const blurImagesDisplay = () => {
+
+          // }
 
   return (
     <>

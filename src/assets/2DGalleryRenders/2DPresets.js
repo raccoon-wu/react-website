@@ -1,5 +1,6 @@
 import * as Min from "../2DGalleryRenders/Creatures/2DCreatureExport.js";
 import * as Char from "../2DGalleryRenders/Characters/2DCharacterExport.js";
+import * as CA from "../2DGalleryRenders/ConceptArt/ConceptArtExport.js";
 
 export const presetsOf2DMinions = [
 { id: 'M1', name: 'Sand Basilisk', images: [Min.M_1], blur: [Min.M_1_blur] },
