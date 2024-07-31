@@ -3,8 +3,9 @@ import { useLocation} from 'react-router-dom';
 import './Renderer.css'
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../3DGalleryRenders/3DPresets.js';
 import { presetsOf2DMinions, presetsOf2DCharacters, presetsOfConceptArt} from '../2DGalleryRenders/2DPresets.js';
-import Cover2DWide from '../Images/2DCoverWide.png';
-import Cover3DWide from '../Images/3DCoverWide.png';
+import Hero2DWide from '../Images/2DCoverWide.png';
+import Hero3DWide from '../Images/3DCoverWide.png';
+import HeroCreature from '../Images/Creature_Hero.gif';
 import arrowLeft from '../Images/Icons/arrow_left.png';
 import arrowRight from '../Images/Icons/arrow_right.png';
 import closeCross from '../Images/Icons/closeCross.png';
@@ -180,11 +181,14 @@ const modalPreviewImages = [];
 //function for conditionally rendering an hero image only for the following presets
     const heroImage = [];
           if (get3DPreset === presetsOf3DCharacters){
-              heroImage.push( <img className='heroDisplayImage' src={Cover3DWide}  loading="lazy"/>)
+              heroImage.push( <img className='heroDisplayImage' src={Hero3DWide}  loading="lazy"/>)
           }
           if (get2DPreset === presetsOf2DCharacters){
-              heroImage.push( <img className='heroDisplayImage' src={Cover2DWide} loading="lazy"/>)
+              heroImage.push( <img className='heroDisplayImage' src={Hero2DWide} loading="lazy"/>)
           }
+          if (get2DPreset === presetsOf2DMinions){
+            heroImage.push( <img className='heroDisplayImage' src={HeroCreature} loading="lazy"/>)
+        }
     
 //function for conditionally rendering text depending on which preset is chosen and which preset is chosen
     let modalText = " ";
