@@ -20,3 +20,79 @@ export const presetsOf2DCharacters = [
     { id: 'C7', name: 'Bewitching Janna & Miss Fortune', images: [Char.C_7], blur: [Char.C_7_blur] },
     { id: 'C8', name: 'Cosmic & Dark Star Lux', images: [Char.C_8], blur: [Char.C_8_blur] },
   ];
+
+  export const presetsOfConceptArt = [
+    {
+      id: 'CA1',
+      name: 'Eldritch Warlocks',
+      images: [
+        CA.N_F, 
+        CA.N_B1,
+        CA.N_B2,
+        CA.N_C1
+      ]
+    },
+    {
+      id: 'CA2',
+      name: 'Dark Woods Warriors',
+      images: [
+        CA.M_F, 
+        CA.M_B1,
+        CA.M_B2,
+        CA.M_C1,
+        CA.M_C2
+      ]
+    },
+    {
+      id: 'CA3',
+      name: 'Pirates',
+      images: [
+        CA.B_F, 
+        CA.B_B1,
+        CA.B_B2,
+        CA.B_B3,
+        CA.B_B4
+      ]
+    },
+    {
+      id: 'CA4',
+      name: 'Desert Tribes Assassins',
+      images: [
+        CA.A_F, 
+        CA.A_B1,
+        CA.A_B2,
+        CA.A_B3,
+        CA.A_C1
+      ]
+    },
+    {
+      id: 'CA5',
+      name: 'Caramel Cheesecake',
+      images: [CA.C1_F]
+    },
+    {
+      id: 'CA7',
+      name: 'Red Velvet Cakes',
+      images: [CA.C3_F]
+    },
+    {
+      id: 'CA6',
+      name: 'Strawberry Shortcake',
+      images: [CA.C2_F]
+    },
+    {
+      id: 'CA8',
+      name: 'Funfetti Cake',
+      images: [CA.C4_F]
+    },
+    {
+      id: 'CA9',
+      name: 'Matcha Chiffon Cake',
+      images: [CA.C5_F]
+    },
+    {
+      id: 'CA10',
+      name: 'Chocolate Mud Cake',
+      images: [CA.C6_F]
+    },
+  ];

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../../3DGalleryRenders/3DPresets.js';
-import { presetsOf2DMinions, presetsOf2DCharacters } from '../../2DGalleryRenders/2DPresets.js';
+import { presetsOf2DMinions, presetsOf2DCharacters, presetsOfConceptArt} from '../../2DGalleryRenders/2DPresets.js';
 import backButton from '../../Images/Icons/home_icon.png';
 
 const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
@@ -48,6 +48,7 @@ const NavBar = ({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) => {
         <div className='galleryOptionsDiv'>
             <button className={get2DPreset === presetsOf2DCharacters ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set2DPreset(presetsOf2DCharacters)}>Characters</button>
             <button className={get2DPreset === presetsOf2DMinions ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set2DPreset(presetsOf2DMinions)}>Creatures</button>
+            <button className={get2DPreset === presetsOfConceptArt ? 'selectHighlight' : 'buttonNavbar'} onClick={()=>set2DPreset(presetsOfConceptArt)}>Concept Art</button>
         </div>
       </>
       }

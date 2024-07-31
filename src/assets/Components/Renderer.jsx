@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation} from 'react-router-dom';
 import './Renderer.css'
 import { presetsOf3DCharacters, presetOf3DObjects, presetOf3DEnvironments } from '../3DGalleryRenders/3DPresets.js';
-import { presetsOf2DMinions, presetsOf2DCharacters } from '../2DGalleryRenders/2DPresets.js';
+import { presetsOf2DMinions, presetsOf2DCharacters, presetsOfConceptArt} from '../2DGalleryRenders/2DPresets.js';
 import Cover2DWide from '../Images/2DCoverWide.png';
 import Cover3DWide from '../Images/3DCoverWide.png';
 import arrowLeft from '../Images/Icons/arrow_left.png';
@@ -41,7 +41,10 @@ function Renderer({get2DPreset, set2DPreset, get3DPreset, set3DPreset}) {
         }
        
       } else if (location.pathname.toLowerCase() === "/2dgallery") {
-        setPresetToDisplay(Array.isArray(get2DPreset) ? get2DPreset.map(preset => preset.images).flat() : []);
+        if (get2DPreset === presetsOfConceptArt){
+          setPresetToDisplay(Array.isArray(get2DPreset) ? get2DPreset.map(preset => preset.images[0]).flat() : []);
+        } else {setPresetToDisplay(Array.isArray(get2DPreset) ? get2DPreset.map(preset => preset.images).flat() : []);}
+        
       } else if (location.pathname === "/") {
         setPresetToDisplay([]);
       }
@@ -158,10 +161,21 @@ const modalPreviewImages = [];
 
 // 2D - Just need to display one so it's always the same
     if(location.pathname.toLowerCase() === "/2dgallery"){
-      modalPreviewImages.push(
-        <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}  loading="lazy"></img>
-      )
+      if(get2DPreset[modalImagePresetIndex].images.length > 1){
+        for(let j = 0; j < get2DPreset[modalImagePresetIndex].images.length; j++){
+          modalPreviewImages.push(
+            <img className={ j === modalImageIndex ? 'modalImagePreviewImages' : 'modalImagePreviewImagesDARK' } key={j} src={get2DPreset[modalImagePresetIndex].images[j]}  loading="lazy"></img>
+          )
+        }
+      } else {
+        modalPreviewImages.push(
+          <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}  loading="lazy"></img>
+        )
+      // modalPreviewImages.push(
+      //   <img className='modalImagePreviewImages' key={0} src={get2DPreset[modalImagePresetIndex].images[0]}  loading="lazy"></img>
+      // )
     }
+  }
 
 //function for conditionally rendering an hero image only for the following presets
     const heroImage = [];
@@ -198,7 +212,19 @@ const modalPreviewImages = [];
           }
 
           if (location.pathname.toLowerCase() === "/2dgallery"){
-              modalText = get2DPreset[modalImagePresetIndex].name + " Illustration";
+            if(get2DPreset === presetsOfConceptArt){
+              //Checks if the images[] array have more than 1 image in it for concept art
+              if(get2DPreset[modalImagePresetIndex].images.length >= 1)
+              { 
+                //First index in images[] naming style
+                if(modalImageIndex === 0){modalText = get2DPreset[modalImagePresetIndex].name + " Finallised Concept";}
+
+                //Subsequent index naming style
+                if(modalImageIndex > 0){
+                  modalText = get2DPreset[modalImagePresetIndex].name + " Brainstorming";
+                }
+              }
+            } else {modalText = get2DPreset[modalImagePresetIndex].name + " Illustration";}
           }
 
           console.log('preset is: '+modalImagePresetIndex);
@@ -215,16 +241,6 @@ const modalPreviewImages = [];
               setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
               }
               return newIndex;
-              // const newIndex = prevIndex === 0 ? prevIndex : prevIndex - 1;
-              // if(location.pathname.toLowerCase() === "/3dgallery"){
-              // setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
-              // setmodalImageIndex(newIndex);
-              // } else if(location.pathname.toLowerCase() === "/2dgallery"){
-              // setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
-              // setmodalImageIndex(newIndex);
-              // }
-              // return newIndex;
-
             });
           }
 
@@ -239,15 +255,6 @@ const modalPreviewImages = [];
               setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
               return newIndex;
               }
-              // if(location.pathname.toLowerCase() === "/3dgallery"){
-              //   const newIndex = prevIndex === get3DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
-              // setModalImage(get3DPreset[modalImagePresetIndex].images[newIndex]);
-              // return newIndex;
-              // } else if(location.pathname.toLowerCase() === "/2dgallery"){
-              //   const newIndex = prevIndex === get2DPreset[modalImagePresetIndex].images.length - 1 ? prevIndex : prevIndex + 1;
-              // setModalImage(get2DPreset[modalImagePresetIndex].images[newIndex]);
-              // return newIndex;
-              // }
         });
           }
 
